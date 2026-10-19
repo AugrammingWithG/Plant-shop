@@ -2788,6 +2788,7 @@ select option {
   }
   .hero__hint {
     left: 50%;
+    translate: -50% 0;
   }
   .specimen {
     grid-column: 1;
