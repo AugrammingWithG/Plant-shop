@@ -2,7 +2,7 @@
 // Run with: npm run sync
 // The old Wix /shop page only listed one product because its gallery was bound
 // to the "Artificial Turf & Accessories" category; every product is still here.
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { contentBox, mapLimit } from "./trim-bands.mjs";
 
 const BASE = "https://www.potplantheavenperth.com";
@@ -144,18 +144,37 @@ const products = raw
   })
   .filter((p) => p.variants.length);
 
+// The previous sync, if any: lets nightly runs reuse photo analysis and skip no-op writes.
+let previous = null;
+try {
+  previous = JSON.parse(readFileSync(OUT, "utf8"));
+} catch {
+  // first sync
+}
+const knownCrops = new Map();
+for (const p of previous?.products || []) {
+  const img = p.images?.[0];
+  if (img && typeof img === "object" && "crop" in img) knownCrops.set(img.id, img.crop);
+}
+
 // Crop letterbox bands out of each product's lead photo (the one on its tag).
-let trimmed = 0;
+// crop is [x, y, w, h] in source pixels, or false once a photo is known to have no bands.
+let analysed = 0;
 await mapLimit(products, 8, async (p) => {
   const img = p.images[0];
   if (!img?.w || !img?.h) return;
-  const box = await contentBox(img.id);
-  if (box) {
-    img.crop = [Math.round(box[0] * img.w), Math.round(box[1] * img.h), Math.round(box[2] * img.w), Math.round(box[3] * img.h)];
-    trimmed++;
+  if (knownCrops.has(img.id)) {
+    img.crop = knownCrops.get(img.id);
+    return;
   }
+  const box = await contentBox(img.id);
+  if (box === undefined) return; // couldn't fetch or decode: try again next sync
+  analysed++;
+  img.crop = box
+    ? [Math.round(box[0] * img.w), Math.round(box[1] * img.h), Math.round(box[2] * img.w), Math.round(box[3] * img.h)]
+    : false;
 });
-console.log(`trimmed letterbox bands on ${trimmed} lead photos`);
+console.log(`analysed ${analysed} new lead photos for letterbox bands`);
 
 const categories = categoryList
   .filter((c) => c.name !== "All Products" && c.visible !== false)
@@ -163,6 +182,20 @@ const categories = categoryList
   .filter((c) => c.count > 0)
   .sort((a, b) => b.count - a.count);
 
-mkdirSync(new URL(".", OUT), { recursive: true });
-writeFileSync(OUT, JSON.stringify({ syncedAt: new Date().toISOString(), categories, products }));
-console.log(`wrote ${products.length} products in ${categories.length} categories (${raw.length - products.length} hidden or unpriced skipped)`);
+// Guard against a Wix hiccup wiping the shop: refuse a catalogue that shrank by more than half.
+const before = previous?.products?.length || 0;
+if (before && products.length < before * 0.5) {
+  console.error(`refusing to write: ${products.length} products now vs ${before} before`);
+  process.exit(1);
+}
+
+const unchanged =
+  previous &&
+  JSON.stringify({ categories: previous.categories, products: previous.products }) === JSON.stringify({ categories, products });
+if (unchanged) {
+  console.log(`no catalogue changes (${products.length} products)`);
+} else {
+  mkdirSync(new URL(".", OUT), { recursive: true });
+  writeFileSync(OUT, JSON.stringify({ syncedAt: new Date().toISOString(), categories, products }));
+  console.log(`wrote ${products.length} products in ${categories.length} categories (${raw.length - products.length} hidden or unpriced skipped)`);
+}

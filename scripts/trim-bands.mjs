@@ -31,10 +31,11 @@ function isBand(values) {
   return max - min < 28 && (mean > 232 || mean < 18);
 }
 
-// Returns the content box as fractions [x, y, w, h] of the image, or null when there's nothing to trim.
+// Returns the content box as fractions [x, y, w, h] of the image, null when there's nothing to trim,
+// or undefined when the photo couldn't be read (so the caller can retry later).
 export async function contentBox(id) {
   const px = await grayPixels(id);
-  if (!px) return null;
+  if (!px) return undefined;
   const row = (y) => px.subarray(y * SIZE, (y + 1) * SIZE);
   const col = (x) => Array.from({ length: SIZE }, (_, y) => px[y * SIZE + x]);
   let top = 0;

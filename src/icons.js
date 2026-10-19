@@ -19,6 +19,9 @@ export const icons = {
   turn: wrap('<path d="M4.5 12a7.5 7.5 0 0 1 13-5.1M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M17.8 3.5v3.6h-3.6M6.2 20.5v-3.6h3.6"/>'),
   tag: wrap('<path d="M7.5 2.8h9a1.8 1.8 0 0 1 1.8 1.8v10.6L12 21.2l-6.3-6V4.6a1.8 1.8 0 0 1 1.8-1.8Z"/><circle cx="12" cy="6.4" r="1.2"/>'),
   copy: wrap('<rect x="8" y="8" width="11.5" height="11.5" rx="1.6"/><path d="M5.5 15.5h-.3A1.7 1.7 0 0 1 3.5 13.8V5.2a1.7 1.7 0 0 1 1.7-1.7h8.6a1.7 1.7 0 0 1 1.7 1.7v.3"/>'),
+  menu: wrap('<path d="M4.5 7.5h15M4.5 12h15M4.5 16.5h15"/>'),
+  send: wrap('<path d="M4.5 12h13M12.5 6l6 6-6 6"/>'),
+  chat: wrap('<path d="M4.5 5.5h15v10h-8l-4.5 3.5V15.5H4.5Z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01" stroke-width="2.4"/>'),
   trash: wrap('<path d="M4.5 7h15M10 7V4.5h4V7M6.5 7l.9 12.5h9.2L17.5 7"/>'),
 };
 

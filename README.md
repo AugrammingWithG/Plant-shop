@@ -23,6 +23,13 @@ npm run sync
 
 The sync script takes the light needs (full sun, part shade, shade) and plant specs from each product's own description. A light icon only appears when the description actually says so. Product photos still load from Wix's image CDN.
 
+## Automations and helpers
+
+- **Nightly stock sync:** `.github/workflows/sync-catalogue.yml` re-pulls the Wix catalogue every night at 2:30 am Perth time. When anything has changed, it commits the new catalogue and redeploys the site. It analyses only new photos, and it refuses to publish if the catalogue suddenly shrinks by more than half. You can also run it any time from the repo's **Actions** tab ("Nightly catalogue sync", then **Run workflow**).
+- **Plant helper:** the **Ask** button opens a small chat (`src/helper.js`). It answers delivery, hours, payment and ordering questions from the site's own facts, and it finds plants from the real catalogue, for example "natives for full sun under $30" or "hedging up to 1 m". It runs entirely in the browser, costs nothing, and never makes things up: anything it can't answer goes to a call or WhatsApp.
+- **Email order requests:** switched off until the nursery adds its EmailJS keys. See [docs/email-orders.md](docs/email-orders.md). Customers can always send orders by WhatsApp or SMS.
+- **Small conveniences:** every order request gets a reference number such as `PPH-261019-4821`. The visitor's browser remembers their name, phone and suburb for next time, and their order is kept if they leave and come back.
+
 ## What was wrong with the old site
 
 - **Only 1 of 652 products showed.** The /shop page's product gallery was set to the "Artificial Turf & Accessories" category, which contains only Foundry Sand. On top of that, most products have a $0.00 base price with the real price on each pot-size option, so they looked free wherever they did appear.

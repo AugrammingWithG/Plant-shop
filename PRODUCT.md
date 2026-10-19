@@ -27,7 +27,8 @@ Stephen describes the business as a nursery that began as a therapeutic hobby wh
 ## Operating Context
 
 - Ordering: **cart → order request**. The customer builds a cart, sees progress toward the $350 delivery minimum, and submits name, suburb, phone and notes. The owner confirms availability, delivery and the invoice. There is no online payment on this site. The existing FAQ says payment is accepted by credit card, PayPal or Alipay when invoiced.
-- Contact: phone/SMS/WhatsApp to 0420 493 944. No chatbots and no third-party popup widgets.
+- Contact: phone/SMS/WhatsApp to 0420 493 944. No third-party chat bots or popup widgets. The site's own plant helper (added 2026-10-19 at the user's request) answers only from site facts and the real catalogue, and hands anything else to a call or WhatsApp. It never invents fees, stock or claims.
+- Automations (added 2026-10-19): a nightly GitHub Action syncs the catalogue from Wix and redeploys. Email order requests with a customer confirmation go through EmailJS once the nursery adds its keys (docs/email-orders.md); WhatsApp/SMS always remain.
 - Office hours: Mon–Sat 9 AM – 12 noon. Deliveries: Mon–Sat 1 PM – 9 PM.
 - Delivery areas: Perth Metro & Mandurah. Minimum order $350. The FAQ states "typically 7–10 business days".
 - Address: 191 Westfield Rd, Camillo WA. Online orders only, so it is not a walk-in shopfront.

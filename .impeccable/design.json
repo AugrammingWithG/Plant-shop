@@ -1,479 +1,477 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T08:15:23.102Z",
+  "generatedAt": "2026-10-19T14:48:11.134Z",
   "title": "Design System: Pot Plant Heaven Perth",
   "extensions": {
     "colorMeta": {
-      "field": {
+      "leaf-white": {
+        "role": "neutral",
+        "displayName": "Leaf-White Ground",
+        "canonical": "oklch(97.2% 0.009 128.6)",
+        "tonalRamp": [
+          "#0a0c08",
+          "#232521",
+          "#3e413c",
+          "#5c5f5a",
+          "#7f817c",
+          "#a3a6a0",
+          "#c9ccc6",
+          "#edf0ea"
+        ]
+      },
+      "tag-white": {
+        "role": "neutral",
+        "displayName": "Tag White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(91.2% 0.019 133.1)",
+        "tonalRamp": [
+          "#080d05",
+          "#20261d",
+          "#3c4238",
+          "#596055",
+          "#7c8377",
+          "#a0a79b",
+          "#c6cdc1",
+          "#e9f2e4"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "oklch(84.1% 0.027 136.3)",
+        "tonalRamp": [
+          "#060e04",
+          "#1e271a",
+          "#394335",
+          "#576152",
+          "#798474",
+          "#9da998",
+          "#c3cfbe",
+          "#e7f3e1"
+        ]
+      },
+      "potting-ink": {
+        "role": "neutral",
+        "displayName": "Potting Ink",
+        "canonical": "oklch(23.6% 0.026 155.7)",
+        "tonalRamp": [
+          "#030e07",
+          "#1a281f",
+          "#35443a",
+          "#526257",
+          "#74857a",
+          "#98aa9e",
+          "#bed0c3",
+          "#e1f4e7"
+        ]
+      },
+      "potting-ink-soft": {
+        "role": "neutral",
+        "displayName": "Potting Ink Soft",
+        "canonical": "oklch(44.5% 0.024 154.3)",
+        "tonalRamp": [
+          "#040e07",
+          "#1b281f",
+          "#36443a",
+          "#546258",
+          "#76857a",
+          "#9aa99e",
+          "#bfcfc4",
+          "#e3f4e7"
+        ]
+      },
+      "nursery-green": {
         "role": "primary",
-        "displayName": "Nursery Bed Green",
+        "displayName": "Nursery Green",
         "canonical": "oklch(46.5% 0.115 152.7)",
         "tonalRamp": [
-          "oklch(15% 0.115 152.7)",
-          "oklch(25% 0.115 152.7)",
-          "oklch(35% 0.115 152.7)",
-          "oklch(45% 0.115 152.7)",
-          "oklch(55% 0.115 152.7)",
-          "oklch(65% 0.115 152.7)",
-          "oklch(80% 0.115 152.7)",
-          "oklch(95% 0.040 152.7)"
+          "#001003",
+          "#002d12",
+          "#014d26",
+          "#15703c",
+          "#41945e",
+          "#68b981",
+          "#8ee1a6",
+          "#c7ffd5"
         ]
       },
-      "field-deep": {
+      "nursery-green-hover": {
         "role": "primary",
-        "displayName": "Deep Bed Green",
-        "canonical": "oklch(40.3% 0.096 154.5)",
+        "displayName": "Nursery Green (hover)",
+        "canonical": "oklch(41.8% 0.103 152.9)",
         "tonalRamp": [
-          "oklch(15% 0.096 154.5)",
-          "oklch(25% 0.096 154.5)",
-          "oklch(35% 0.096 154.5)",
-          "oklch(45% 0.096 154.5)",
-          "oklch(55% 0.096 154.5)",
-          "oklch(65% 0.096 154.5)",
-          "oklch(80% 0.096 154.5)",
-          "oklch(95% 0.040 154.5)"
+          "#001003",
+          "#002d13",
+          "#014d26",
+          "#246e41",
+          "#4b9262",
+          "#70b786",
+          "#96deab",
+          "#c6ffd5"
         ]
       },
-      "flash": {
+      "green-wash": {
+        "role": "neutral",
+        "displayName": "Green Wash",
+        "canonical": "oklch(94.0% 0.021 143.2)",
+        "tonalRamp": [
+          "#060d06",
+          "#1e271d",
+          "#394339",
+          "#576156",
+          "#798478",
+          "#9da89c",
+          "#c3cec2",
+          "#e6f2e5"
+        ]
+      },
+      "shade-house-deep": {
+        "role": "primary",
+        "displayName": "Shade-House Deep",
+        "canonical": "oklch(31.0% 0.066 156.6)",
+        "tonalRamp": [
+          "#001005",
+          "#002d17",
+          "#1d4a31",
+          "#3c694e",
+          "#5f8c70",
+          "#82b294",
+          "#a8d8b9",
+          "#cbfddd"
+        ]
+      },
+      "on-deep-soft": {
+        "role": "neutral",
+        "displayName": "On-Deep Soft",
+        "canonical": "oklch(87.3% 0.034 153.6)",
+        "tonalRamp": [
+          "#010f05",
+          "#17291c",
+          "#324537",
+          "#4f6355",
+          "#718677",
+          "#95ab9b",
+          "#bbd1c1",
+          "#def6e4"
+        ]
+      },
+      "price-flash": {
         "role": "secondary",
         "displayName": "Price Flash Yellow",
         "canonical": "oklch(88.1% 0.181 94.0)",
         "tonalRamp": [
-          "oklch(15% 0.181 94)",
-          "oklch(25% 0.181 94)",
-          "oklch(35% 0.181 94)",
-          "oklch(45% 0.181 94)",
-          "oklch(55% 0.181 94)",
-          "oklch(65% 0.181 94)",
-          "oklch(80% 0.181 94)",
-          "oklch(95% 0.040 94)"
+          "#100a00",
+          "#2d2300",
+          "#4d3e00",
+          "#705c00",
+          "#987e02",
+          "#c3a206",
+          "#efc70d",
+          "#ffeeb6"
         ]
       },
-      "flash-deep": {
+      "price-flash-deep": {
         "role": "secondary",
-        "displayName": "Pressed Flash",
-        "canonical": "oklch(83.9% 0.172 92.1)",
+        "displayName": "Price Flash Yellow (hover)",
+        "canonical": "oklch(83.5% 0.171 92.4)",
         "tonalRamp": [
-          "oklch(15% 0.172 92.1)",
-          "oklch(25% 0.172 92.1)",
-          "oklch(35% 0.172 92.1)",
-          "oklch(45% 0.172 92.1)",
-          "oklch(55% 0.172 92.1)",
-          "oklch(65% 0.172 92.1)",
-          "oklch(80% 0.172 92.1)",
-          "oklch(95% 0.040 92.1)"
+          "#110a00",
+          "#2d2300",
+          "#4e3e01",
+          "#715b00",
+          "#9a7d00",
+          "#c5a103",
+          "#f2c609",
+          "#ffeeba"
         ]
       },
-      "red": {
-        "role": "tertiary",
-        "displayName": "Signal Red",
-        "canonical": "oklch(54.9% 0.190 31.8)",
+      "sold-out-red": {
+        "role": "error",
+        "displayName": "Sold-Out Red",
+        "canonical": "oklch(52.1% 0.175 32.4)",
         "tonalRamp": [
-          "oklch(15% 0.190 31.8)",
-          "oklch(25% 0.190 31.8)",
-          "oklch(35% 0.190 31.8)",
-          "oklch(45% 0.190 31.8)",
-          "oklch(55% 0.190 31.8)",
-          "oklch(65% 0.190 31.8)",
-          "oklch(80% 0.190 31.8)",
-          "oklch(95% 0.040 31.8)"
-        ]
-      },
-      "tag": {
-        "role": "neutral",
-        "displayName": "Tag White",
-        "canonical": "oklch(100% 0 0)",
-        "tonalRamp": [
-          "oklch(15% 0.000 0)",
-          "oklch(25% 0.000 0)",
-          "oklch(35% 0.000 0)",
-          "oklch(45% 0.000 0)",
-          "oklch(55% 0.000 0)",
-          "oklch(65% 0.000 0)",
-          "oklch(80% 0.000 0)",
-          "oklch(95% 0.000 0)"
-        ]
-      },
-      "tag-shade": {
-        "role": "neutral",
-        "displayName": "Tag Shade",
-        "canonical": "oklch(95.6% 0.009 134.9)",
-        "tonalRamp": [
-          "oklch(15% 0.009 134.9)",
-          "oklch(25% 0.009 134.9)",
-          "oklch(35% 0.009 134.9)",
-          "oklch(45% 0.009 134.9)",
-          "oklch(55% 0.009 134.9)",
-          "oklch(65% 0.009 134.9)",
-          "oklch(80% 0.009 134.9)",
-          "oklch(95% 0.009 134.9)"
-        ]
-      },
-      "tag-edge": {
-        "role": "neutral",
-        "displayName": "Tag Edge",
-        "canonical": "oklch(88.9% 0.015 136.1)",
-        "tonalRamp": [
-          "oklch(15% 0.015 136.1)",
-          "oklch(25% 0.015 136.1)",
-          "oklch(35% 0.015 136.1)",
-          "oklch(45% 0.015 136.1)",
-          "oklch(55% 0.015 136.1)",
-          "oklch(65% 0.015 136.1)",
-          "oklch(80% 0.015 136.1)",
-          "oklch(95% 0.015 136.1)"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Print Black",
-        "canonical": "oklch(18.2% 0.009 137.9)",
-        "tonalRamp": [
-          "oklch(15% 0.009 137.9)",
-          "oklch(25% 0.009 137.9)",
-          "oklch(35% 0.009 137.9)",
-          "oklch(45% 0.009 137.9)",
-          "oklch(55% 0.009 137.9)",
-          "oklch(65% 0.009 137.9)",
-          "oklch(80% 0.009 137.9)",
-          "oklch(95% 0.009 137.9)"
-        ]
-      },
-      "ink-2": {
-        "role": "neutral",
-        "displayName": "Faded Print",
-        "canonical": "oklch(40.6% 0.019 139.4)",
-        "tonalRamp": [
-          "oklch(15% 0.019 139.4)",
-          "oklch(25% 0.019 139.4)",
-          "oklch(35% 0.019 139.4)",
-          "oklch(45% 0.019 139.4)",
-          "oklch(55% 0.019 139.4)",
-          "oklch(65% 0.019 139.4)",
-          "oklch(80% 0.019 139.4)",
-          "oklch(95% 0.019 139.4)"
-        ]
-      },
-      "ink-lift": {
-        "role": "neutral",
-        "displayName": "Ink Lift",
-        "canonical": "oklch(29.8% 0.014 136.7)",
-        "tonalRamp": [
-          "oklch(15% 0.014 136.7)",
-          "oklch(25% 0.014 136.7)",
-          "oklch(35% 0.014 136.7)",
-          "oklch(45% 0.014 136.7)",
-          "oklch(55% 0.014 136.7)",
-          "oklch(65% 0.014 136.7)",
-          "oklch(80% 0.014 136.7)",
-          "oklch(95% 0.014 136.7)"
-        ]
-      },
-      "field-ink": {
-        "role": "neutral",
-        "displayName": "On-Field White",
-        "canonical": "oklch(100% 0 0)",
-        "tonalRamp": [
-          "oklch(15% 0.000 0)",
-          "oklch(25% 0.000 0)",
-          "oklch(35% 0.000 0)",
-          "oklch(45% 0.000 0)",
-          "oklch(55% 0.000 0)",
-          "oklch(65% 0.000 0)",
-          "oklch(80% 0.000 0)",
-          "oklch(95% 0.000 0)"
-        ]
-      },
-      "field-ink-2": {
-        "role": "neutral",
-        "displayName": "Pale Leaf",
-        "canonical": "oklch(92.0% 0.035 155.9)",
-        "tonalRamp": [
-          "oklch(15% 0.035 155.9)",
-          "oklch(25% 0.035 155.9)",
-          "oklch(35% 0.035 155.9)",
-          "oklch(45% 0.035 155.9)",
-          "oklch(55% 0.035 155.9)",
-          "oklch(65% 0.035 155.9)",
-          "oklch(80% 0.035 155.9)",
-          "oklch(95% 0.035 155.9)"
-        ]
-      },
-      "pot": {
-        "role": "neutral",
-        "displayName": "Poly-Pot Black",
-        "canonical": "oklch(19.7% 0.007 135.0)",
-        "tonalRamp": [
-          "oklch(15% 0.007 135)",
-          "oklch(25% 0.007 135)",
-          "oklch(35% 0.007 135)",
-          "oklch(45% 0.007 135)",
-          "oklch(55% 0.007 135)",
-          "oklch(65% 0.007 135)",
-          "oklch(80% 0.007 135)",
-          "oklch(95% 0.007 135)"
-        ]
-      },
-      "pot-ink-2": {
-        "role": "neutral",
-        "displayName": "Pot Grey Text",
-        "canonical": "oklch(80.4% 0.019 137.8)",
-        "tonalRamp": [
-          "oklch(15% 0.019 137.8)",
-          "oklch(25% 0.019 137.8)",
-          "oklch(35% 0.019 137.8)",
-          "oklch(45% 0.019 137.8)",
-          "oklch(55% 0.019 137.8)",
-          "oklch(65% 0.019 137.8)",
-          "oklch(80% 0.019 137.8)",
-          "oklch(95% 0.019 137.8)"
+          "#210000",
+          "#490500",
+          "#791000",
+          "#aa2207",
+          "#d44d35",
+          "#fe745a",
+          "#ffb6a6",
+          "#ffe9e4"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero H1 only. Uppercase white with the second word in flash; width 68% below 901px, 76% above."
+        "purpose": "Hero H1 only: condensed caps (wdth 72, 78 from 901px), nursery green."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section H2s, uppercase, balanced wrap."
+        "purpose": "Section titles and side-sheet heads (2rem); condensed caps."
       },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Plant common names on tags; sheet, step, FAQ and order titles. Uppercase."
-      },
-      "price": {
-        "displayName": "Price",
-        "purpose": "Every price, subtotal and total; tabular figures."
+      "sheet-title": {
+        "displayName": "Sheet title",
+        "purpose": "Plant name on the plant sheet's front tag; condensed caps."
       },
       "quote": {
         "displayName": "Quote",
-        "purpose": "Stephen's quote in the story section only."
+        "purpose": "Stephen's words in the story band, quoted in full."
+      },
+      "title": {
+        "displayName": "Tag name",
+        "purpose": "Plant names on catalogue tags, normal case; 1rem under 600px."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Every price: tags, size rows, order tabs, order total; tabular, wdth 70."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running copy, 34-65ch."
-      },
-      "botanical": {
-        "displayName": "Botanical",
-        "purpose": "Italic Latin names under common names; never caps."
-      },
-      "control": {
-        "displayName": "Control",
-        "purpose": "Buttons, pills and nav."
+        "purpose": "Running text; 1rem under 600px; descriptions capped at 65ch."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Uppercase tracked names for fields, facts and footer columns; never a kicker above a heading."
+        "purpose": "Fact terms, pot sizes, counts and field labels in soft ink."
       }
     },
     "shadows": [
       {
-        "name": "tag-rest",
-        "value": "drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.28))",
-        "purpose": "Every tag; applied as filter so the stake and hole silhouettes cast."
+        "name": "shadow-tag",
+        "value": "0 1px 2px rgba(20, 34, 25, 0.06), 0 12px 28px -18px rgba(20, 34, 25, 0.4)",
+        "purpose": "Catalogue tags at rest, empty states, sheet close button."
       },
       {
-        "name": "card-lift",
-        "value": "drop-shadow(0 18px 18px rgba(3,25,12,.3))",
-        "purpose": "Delivery card, the largest tag."
+        "name": "shadow-lift",
+        "value": "0 2px 4px rgba(20, 34, 25, 0.06), 0 22px 40px -22px rgba(20, 34, 25, 0.45)",
+        "purpose": "Tag hover/focus (with translateY(-4px)), menus, fly-to-order thumbnail."
+      },
+      {
+        "name": "staked-tag",
+        "value": "drop-shadow(0 1px 1px rgba(20, 34, 25, 0.08)) drop-shadow(0 10px 18px rgba(20, 34, 25, 0.12))",
+        "purpose": "filter on the hero search tag so the clipped stake casts; order lines use 0 6px 10px at 0.1."
       },
       {
         "name": "punched-hole",
-        "value": "inset 0 2px 2px rgba(0,0,0,.45)",
-        "purpose": "The punched hole in every tag."
+        "value": "inset 0 1.5px 2px rgba(0, 0, 0, 0.22)",
+        "purpose": "The hole at the top of every tag face."
       },
       {
-        "name": "flash-button",
-        "value": "0 1px 0 rgba(255,255,255,.5) inset, 0 6px 14px -8px rgba(0,0,0,.5)",
-        "purpose": "Primary flash buttons."
-      },
-      {
-        "name": "menu-drop",
-        "value": "0 18px 40px -16px rgba(0,0,0,.55)",
-        "purpose": "Contact dropdown."
-      },
-      {
-        "name": "header-stuck",
-        "value": "0 10px 24px -14px rgba(0,0,0,.55)",
-        "purpose": "Sticky header after scroll."
+        "name": "scrim",
+        "value": "rgba(20, 34, 25, 0.42)",
+        "purpose": "Sheet backdrop."
       }
     ],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Sheets, menus, button press, meter fill, photo zoom."
+        "purpose": "Default easing for every transition; no bounce."
       },
       {
-        "name": "ease-pull",
-        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "Tag lift-and-straighten, add-button press, order-button bump."
+        "name": "photo-morph",
+        "value": "view-transition plant-photo 450ms ease-out; root crossfade 280ms",
+        "purpose": "Tag photo morphs into the plant sheet photo and back on close."
       },
       {
-        "name": "tag-lift",
-        "value": "0.45s ease-pull to translateY(-10px) rotate(0)",
-        "purpose": "A tag pulled from the bed on hover or focus."
+        "name": "fly-to-order",
+        "value": "620ms cubic-bezier(0.22, 1, 0.36, 1), 64px thumbnail arcing to the Order tag, then bump scale 1.07 over 400ms",
+        "purpose": "Shows where an added plant went; reduced motion keeps only the bump."
+      },
+      {
+        "name": "tag-enter",
+        "value": "500ms ease-out, translateY(12px) + fade, stagger 45ms x min(i, 8)",
+        "purpose": "New tags entering the bed after a filter or 'Show more'."
       },
       {
         "name": "sheet-in",
-        "value": "0.45s ease-out from translateY(24px) rotate(-1deg), opacity 0",
-        "purpose": "Plant sheet arrival."
+        "value": "400ms ease-out; centred sheets rise 16px, side sheets slide 32px from the right",
+        "purpose": "Plant, order and helper sheets opening."
       },
       {
-        "name": "slide-in",
-        "value": "0.45s ease-out from translateX(40px), opacity 0",
-        "purpose": "Order sheet arrival."
+        "name": "drop",
+        "value": "250ms ease-out, translateY(-4px) + fade",
+        "purpose": "Contact and compact menus, hedge sub-chips (300ms)."
+      },
+      {
+        "name": "msg-in",
+        "value": "350ms ease-out, translateY(6px) + fade",
+        "purpose": "Each plant helper message."
       },
       {
         "name": "reduced-motion",
-        "value": "durations 0.01ms; 3D bench replaced by a flat tag",
-        "purpose": "prefers-reduced-motion."
+        "value": "animation/transition-duration 0.01ms; no morph or fly",
+        "purpose": "Crossfades and state changes only."
       }
     ],
     "breakpoints": [
       {
-        "name": "sm",
+        "name": "phone",
         "value": "600px"
       },
       {
-        "name": "md",
+        "name": "stack",
         "value": "900px"
       },
       {
-        "name": "hero-desktop",
-        "value": "901px"
+        "name": "beds-wrap",
+        "value": "1024px"
       },
       {
-        "name": "lg",
-        "value": "1100px"
+        "name": "compact-header",
+        "value": "1060px"
       }
     ]
   },
   "components": [
     {
-      "name": "Flash Button",
+      "name": "Flash Button (order action)",
       "kind": "button",
       "refersTo": "button-flash",
-      "description": "Primary buy/send action: add to order, send by WhatsApp, the header order pill.",
+      "description": "Yellow pill for adding to the order and sending it; never for anything else.",
       "html": "<button class=\"ds-btn ds-btn-flash\" type=\"button\">Add to order</button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-btn-flash{background:#ffd400;color:#10130f;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 6px 14px -8px rgba(0,0,0,.5)}.ds-btn-flash:hover{background:#f2c500}"
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:.5em; min-height:48px; padding:0 1.3em; border:1.5px solid transparent; border-radius:999px; font-family:var(--font); font-weight:700; font-stretch:88%; font-size:1rem; cursor:pointer; transition:background-color .2s, border-color .2s, transform .15s var(--ease-out); } .ds-btn:active { transform:scale(.98); } .ds-btn:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; } .ds-btn-flash { background:var(--flash); color:var(--ink); } .ds-btn-flash:hover { background:var(--flash-deep); }"
     },
     {
       "name": "Ink Button",
       "kind": "button",
       "refersTo": "button-ink",
-      "description": "Secondary action; also the tag's Add button and the search's Find it.",
-      "html": "<button class=\"ds-btn ds-btn-ink\" type=\"button\">Send by SMS</button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-btn-ink{background:#10130f;color:#fff}.ds-btn-ink:hover{background:#2a2f28}"
+      "description": "Dark pill for search submit, SMS send and start-new-order.",
+      "html": "<button class=\"ds-btn-ink\" type=\"button\">Send by SMS</button>",
+      "css": ".ds-btn-ink { display:inline-flex; align-items:center; min-height:48px; padding:0 1.3em; border:0; border-radius:999px; background:var(--ink); color:#fff; font-family:var(--font); font-weight:700; font-stretch:88%; font-size:1rem; cursor:pointer; transition:background-color .2s, transform .15s var(--ease-out); } .ds-btn-ink:hover { background:#26372c; } .ds-btn-ink:active { transform:scale(.98); } .ds-btn-ink:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Outlined pill on the green field.",
-      "html": "<div class=\"ds-ground\"><button class=\"ds-btn ds-btn-ghost\" type=\"button\">Show more plants</button></div>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-ground{background:#0a5730;padding:20px}.ds-btn-ghost{border-color:rgba(255,255,255,.7);background:transparent;color:#fff}.ds-btn-ghost:hover{background:rgba(255,255,255,.1)}"
+      "description": "White pill with a hairline border for secondary actions.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Show more plants</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; min-height:48px; padding:0 1.3em; border:1.5px solid var(--line-2); border-radius:999px; background:var(--surface); color:var(--ink); font-family:var(--font); font-weight:700; font-stretch:88%; font-size:1rem; cursor:pointer; transition:border-color .2s; } .ds-btn-ghost:hover { border-color:var(--ink); } .ds-btn-ghost:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; }"
+    },
+    {
+      "name": "Header Row",
+      "kind": "nav",
+      "refersTo": "header-pill",
+      "description": "Wordmark, four links, Ask, call, and the Order pill that fills green with a yellow count once it has items.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><svg viewBox=\"0 0 40 64\" width=\"22\" height=\"36\" aria-hidden=\"true\"><path d=\"M6 0h28a6 6 0 0 1 6 6v36L20 64 0 42V6a6 6 0 0 1 6-6Z\" fill=\"#0d6b38\"/><circle cx=\"20\" cy=\"9\" r=\"3.4\" fill=\"#f4f7f1\"/></svg><span><b>Pot Plant Heaven</b><small>Perth</small></span></a><nav class=\"ds-nav\"><a href=\"#\">Plants</a><a href=\"#\">How it works</a><a href=\"#\">Delivery</a><a href=\"#\">Our story</a></nav><button class=\"ds-pill\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"#0d6b38\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 5.5h15v10h-8l-4.5 3.5V15.5H4.5Z\"/></svg>Ask</button><button class=\"ds-pill ds-order\" type=\"button\"><span class=\"ds-count\">3</span><b>$60.97</b></button></header>",
+      "css": ".ds-top { display:flex; align-items:center; gap:28px; padding:14px 24px; background:var(--ground); font-family:var(--font); color:var(--ink); } .ds-mark { display:flex; align-items:center; gap:10px; text-decoration:none; } .ds-mark span { display:grid; line-height:.95; text-transform:uppercase; } .ds-mark b { font-size:1.15rem; font-weight:800; font-stretch:70%; color:var(--green); } .ds-mark small { font-size:.68rem; font-weight:700; letter-spacing:.34em; color:var(--ink-2); } .ds-nav { display:flex; gap:24px; margin-right:auto; font-weight:550; color:var(--ink-2); } .ds-nav a { color:inherit; text-decoration:none; padding:6px 0; } .ds-nav a:hover { color:var(--ink); text-decoration:underline; } .ds-pill { display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px 0 13px; border:1px solid var(--line-2); border-radius:999px; background:var(--surface); font:inherit; font-weight:650; cursor:pointer; transition:border-color .2s; } .ds-pill:hover { border-color:var(--ink); } .ds-pill:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; } .ds-order { background:var(--green); border-color:var(--green); color:#fff; } .ds-count { display:grid; place-items:center; min-width:22px; height:22px; padding:0 6px; border-radius:999px; background:var(--flash); color:var(--ink); font-size:.8rem; font-weight:800; }"
+    },
+    {
+      "name": "Bed Chips",
+      "kind": "chip",
+      "refersTo": "bed-chip",
+      "description": "One of 14 grouped beds with its count; selected is nursery green.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">Everything <span>640</span></button><button class=\"ds-chip\" aria-pressed=\"false\">Hedging <span>157</span></button><button class=\"ds-chip\" aria-pressed=\"false\">Natives <span>118</span></button></div>",
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:8px; } .ds-chip { display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:0 14px; border:1px solid var(--line-2); border-radius:999px; background:var(--surface); color:var(--ink); font-family:var(--font); font-size:.95rem; font-weight:600; cursor:pointer; transition:background-color .2s, border-color .2s, color .2s; } .ds-chip span { font-size:.78rem; color:var(--ink-2); } .ds-chip:hover { border-color:var(--ink); } .ds-chip:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; } .ds-chip[aria-pressed=\"true\"] { background:var(--green); border-color:var(--green); color:#fff; } .ds-chip[aria-pressed=\"true\"] span { color:var(--on-deep-2); }"
     },
     {
       "name": "Plant Tag",
       "kind": "card",
-      "refersTo": "tag-card",
-      "description": "The signature: white stake tag with punched hole, condensed name, italic botanical, size chips and a flash price band.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-tag\" style=\"--tilt:-1deg\"><div class=\"ds-tag-photo\"></div><div class=\"ds-tag-face\"><p class=\"ds-tag-name\">Lilly Pilly Sublime</p><p class=\"ds-tag-bot\">Acmena smithii</p><div class=\"ds-tag-sizes\"><span class=\"ds-chip ds-chip-on\">5L</span><span class=\"ds-chip\">14cm</span></div></div><div class=\"ds-tag-flash\"><span class=\"ds-tag-price\">$27.99</span><button class=\"ds-tag-add\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5.5v13M5.5 12h13\"/></svg>Add</button></div></div></div>",
-      "css": ".ds-ground{background:#0a5730;padding:28px 28px 64px}.ds-tag{position:relative;width:228px;display:flex;flex-direction:column;padding:30px 12px 0;border-radius:20px 20px 6px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.28));transform:rotate(var(--tilt));transform-origin:50% 120%;transition:transform .45s cubic-bezier(.22,1,.36,1)}.ds-tag:hover,.ds-tag:focus-within{transform:translateY(-10px) rotate(0)}.ds-tag::before{content:\"\";position:absolute;top:10px;left:50%;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:#0a5730;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-tag::after{content:\"\";position:absolute;left:50%;top:calc(100% - 1px);width:34%;height:40px;translate:-50% 0;background:#fff;clip-path:polygon(0 0,100% 0,100% 45%,50% 100%,0 45%)}.ds-tag-photo{aspect-ratio:6/7;border-radius:12px;background:#eef2ec}.ds-tag-face{display:flex;flex-direction:column;gap:6px;padding:12px 2px 14px}.ds-tag-name{margin:0;font-size:1.5rem;font-weight:900;font-stretch:62%;line-height:.95;text-transform:uppercase}.ds-tag-bot{margin:0;font-style:italic;font-size:.92rem;line-height:1.3;color:#444c42}.ds-tag-sizes{display:flex;gap:5px;padding-top:8px}.ds-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1.5px solid #d6ddd3;border-radius:999px;font-size:.8rem;font-weight:650;font-stretch:88%}.ds-chip-on{background:#10130f;border-color:#10130f;color:#fff}.ds-tag-flash{display:flex;align-items:center;justify-content:space-between;margin:0 -12px;padding:10px 10px 10px 14px;background:#ffd400}.ds-tag-price{font-size:1.75rem;font-weight:900;font-stretch:62%;line-height:1;font-variant-numeric:tabular-nums}.ds-tag-add{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 14px 0 10px;border:0;border-radius:999px;background:#10130f;color:#fff;font:inherit;font-weight:750;font-stretch:85%;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),background-color .2s}.ds-tag-add:hover{background:#2a2f28}.ds-tag-add:active{transform:scale(.95)}.ds-tag-add:focus-visible{outline:3px solid #0d6b38;outline-offset:2px}"
+      "refersTo": "plant-tag",
+      "description": "The catalogue card: punched hole, photo, normal-case name, botanical line, light icons, yellow price flash with one action.",
+      "html": "<article class=\"ds-tag\"><div class=\"ds-tag__photo\"></div><div class=\"ds-tag__body\"><h3>Lilly Pilly Sublime PBR</h3><p class=\"ds-bot\">Acmena smithii</p><p class=\"ds-meta\">5 L</p></div><div class=\"ds-flash\"><p class=\"ds-price\">$27.99</p><button class=\"ds-add\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M12 5.5v13M5.5 12h13\"/></svg>Add</button></div></article>",
+      "css": ".ds-tag { position:relative; display:flex; flex-direction:column; width:240px; padding:26px 10px 0; border-radius:18px 18px 10px 10px; background:var(--surface); box-shadow:var(--shadow-tag); font-family:var(--font); color:var(--ink); transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out); } .ds-tag::before { content:\"\"; position:absolute; top:9px; left:50%; width:11px; height:11px; margin-left:-5.5px; border-radius:50%; background:var(--ground); box-shadow:inset 0 1.5px 2px rgba(0,0,0,.22); } .ds-tag:hover, .ds-tag:focus-within { transform:translateY(-4px); box-shadow:var(--shadow-lift); } .ds-tag__photo { aspect-ratio:5/6; border-radius:12px; background:var(--green-soft); } .ds-tag__body { display:grid; gap:4px; padding:14px 6px; } .ds-tag h3 { margin:0; font-size:1.12rem; font-weight:700; font-stretch:88%; line-height:1.22; } .ds-bot { margin:0; font-style:italic; font-size:.9rem; color:var(--ink-2); } .ds-meta { margin:4px 0 0; font-size:.85rem; color:var(--ink-2); } .ds-flash { display:flex; align-items:center; justify-content:space-between; margin:0 -10px; padding:9px 10px 9px 16px; border-radius:0 0 10px 10px; background:var(--flash); } .ds-price { margin:0; font-size:1.45rem; font-weight:800; font-stretch:70%; font-variant-numeric:tabular-nums; } .ds-add { display:inline-flex; align-items:center; gap:4px; min-height:38px; padding:0 14px 0 10px; border:1px solid var(--ink); border-radius:999px; background:var(--ink); color:#fff; font:inherit; font-size:.9rem; font-weight:650; cursor:pointer; } .ds-add:hover { background:#26372c; } .ds-add:focus-visible { outline:2.5px solid var(--green); outline-offset:3px; }"
     },
     {
       "name": "Search Tag",
       "kind": "input",
-      "refersTo": "input-field",
-      "description": "Catalogue search set as a blank horizontal tag: stake to the left, punched hole, a line to write on.",
-      "html": "<div class=\"ds-ground\"><form class=\"ds-find\" role=\"search\"><label class=\"ds-find-label\" for=\"ds-q\">What are you planting?</label><div class=\"ds-find-row\"><input id=\"ds-q\" type=\"search\" placeholder=\"lilly pilly, kangaroo paw, shade…\"><button type=\"submit\">Find it</button></div></form></div>",
-      "css": ".ds-ground{background:#0d6b38;padding:24px 24px 24px 54px}.ds-find{position:relative;max-width:520px;padding:16px 18px 18px 34px;border-radius:6px 22px 22px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.3))}.ds-find::before{content:\"\";position:absolute;right:calc(100% - 1px);top:50%;width:30px;height:46%;translate:0 -50%;background:#fff;clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%)}.ds-find::after{content:\"\";position:absolute;left:12px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#0d6b38;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-find-label{display:block;margin-bottom:4px;font-weight:900;font-stretch:62%;font-size:1.45rem;line-height:1;text-transform:uppercase}.ds-find-row{display:flex;align-items:center;gap:10px;border-bottom:2px solid #10130f;padding-bottom:6px}.ds-find input{flex:1;min-width:0;min-height:46px;border:0;background:transparent;font:inherit;font-size:1.1rem}.ds-find input::placeholder{color:#5d665a;font-style:italic}.ds-find input:focus{outline:none}.ds-find:focus-within{outline:3px solid #ffd400;outline-offset:4px}.ds-find button{min-height:46px;padding:0 20px;border:0;border-radius:999px;background:#10130f;color:#fff;font:inherit;font-weight:750;font-stretch:85%;cursor:pointer}.ds-find button:hover{background:#2a2f28}"
-    },
-    {
-      "name": "Light Filter Pill",
-      "kind": "chip",
-      "refersTo": "filter-pill-selected",
-      "description": "Toggle pill on green with a drawn light glyph; selected fills flash.",
-      "html": "<div class=\"ds-ground\"><label class=\"ds-lf\"><input type=\"checkbox\" checked><span><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.55 1.55M17.15 17.15l1.55 1.55M5.3 18.7l1.55-1.55M17.15 6.85l1.55-1.55\"/></svg>Full sun</span></label><label class=\"ds-lf\"><input type=\"checkbox\"><span>Shade</span></label></div>",
-      "css": ".ds-ground{background:#0a5730;padding:20px;display:flex;gap:6px}.ds-lf{position:relative}.ds-lf input{position:absolute;inset:0;opacity:0;cursor:pointer}.ds-lf span{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1.5px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-size:.88rem;font-weight:650;font-stretch:88%;transition:background-color .2s,color .2s,border-color .2s}.ds-lf:hover span{border-color:#fff}.ds-lf input:checked+span{background:#ffd400;border-color:#ffd400;color:#10130f}.ds-lf input:focus-visible+span{outline:3px solid #ffd400;outline-offset:2px}"
-    },
-    {
-      "name": "Header",
-      "kind": "nav",
-      "refersTo": "",
-      "description": "Sticky green header: tag-silhouette wordmark, nav with flash underline on hover, flash order pill with tabular count and total.",
-      "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><svg viewBox=\"0 0 40 64\" width=\"26\" height=\"42\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M6 0h28a6 6 0 0 1 6 6v36L20 64 0 42V6a6 6 0 0 1 6-6Z\"/><circle cx=\"20\" cy=\"9\" r=\"3.4\" fill=\"#0d6b38\"/></svg><span><b>Pot Plant Heaven</b><i>Perth</i></span></a><nav><a href=\"#\">Plants</a><a href=\"#\">Delivery</a></nav><button class=\"ds-order\" type=\"button\"><b>Your order</b> 3 · $60.97</button></header>",
-      "css": ".ds-top{display:flex;align-items:center;gap:28px;padding:12px 24px;background:#0d6b38;color:#fff;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif}.ds-mark{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}.ds-mark span{display:grid;line-height:.92;text-transform:uppercase}.ds-mark b{font-size:1.32rem;font-weight:900;font-stretch:62%}.ds-mark i{font-style:normal;font-size:.78rem;font-weight:700;letter-spacing:.32em;color:#ffd400}.ds-top nav{display:flex;gap:24px;margin-right:auto;font-weight:600;font-stretch:88%}.ds-top nav a{color:inherit;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}.ds-top nav a:hover{border-bottom-color:#ffd400}.ds-top a:focus-visible,.ds-order:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-order{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#ffd400;color:#10130f;font:inherit;font-stretch:85%;font-weight:600;font-variant-numeric:tabular-nums;cursor:pointer;box-shadow:0 6px 14px -8px rgba(0,0,0,.55)}.ds-order b{font-weight:800}.ds-order:hover{background:#f2c500}"
+      "refersTo": "field",
+      "description": "Blank horizontal staked tag with a write-on line; focus outlines the whole tag.",
+      "html": "<form class=\"ds-find\" role=\"search\"><label for=\"ds-q\">What are you planting?</label><div><input id=\"ds-q\" type=\"search\" placeholder=\"e.g. lilly pilly\"><button type=\"submit\">Find it</button></div></form>",
+      "css": ".ds-find { position:relative; max-width:440px; margin-left:28px; padding:16px 18px 18px 34px; border-radius:6px 20px 20px 6px; background:var(--surface); filter:drop-shadow(0 1px 1px rgba(20,34,25,.08)) drop-shadow(0 10px 18px rgba(20,34,25,.12)); font-family:var(--font); } .ds-find::before { content:\"\"; position:absolute; right:calc(100% - 1px); top:50%; width:28px; height:46%; translate:0 -50%; background:var(--surface); clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%); } .ds-find::after { content:\"\"; position:absolute; left:12px; top:50%; width:11px; height:11px; margin-top:-5.5px; border-radius:50%; background:var(--ground); box-shadow:inset 0 1.5px 2px rgba(0,0,0,.25); } .ds-find label { display:block; font-weight:800; font-stretch:72%; font-size:1.2rem; text-transform:uppercase; color:var(--green); } .ds-find div { display:flex; gap:10px; align-items:center; border-bottom:1.5px solid var(--ink); padding-bottom:4px; } .ds-find input { flex:1; min-width:0; min-height:46px; border:0; background:transparent; font:inherit; font-size:1.1rem; color:var(--ink); } .ds-find input::placeholder { color:#66746a; font-style:italic; } .ds-find input:focus { outline:none; } .ds-find:focus-within { outline:2.5px solid var(--green); outline-offset:4px; } .ds-find button { min-height:42px; padding:0 18px; border:0; border-radius:999px; background:var(--ink); color:#fff; font:inherit; font-weight:700; font-stretch:88%; cursor:pointer; } .ds-find button:hover { background:#26372c; }"
     },
     {
       "name": "Order Line",
       "kind": "custom",
-      "refersTo": "",
-      "description": "A small horizontal tag in the order sheet, stake to the left, with a flash subtotal panel on the free end.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-line\"><div class=\"ds-line-img\"></div><div class=\"ds-line-what\"><b>Mondo Grass</b><span>14 cm Pot · $15.99</span></div><div class=\"ds-line-sub\">$15.99</div></div></div>",
-      "css": ".ds-ground{background:#0a5730;padding:20px 20px 20px 48px}.ds-line{position:relative;display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0 10px 30px;border-radius:6px 16px 16px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 8px 8px rgba(0,0,0,.28))}.ds-line::before{content:\"\";position:absolute;right:calc(100% - 1px);top:50%;width:26px;height:52%;translate:0 -50%;background:#fff;clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%)}.ds-line::after{content:\"\";position:absolute;left:10px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#0a5730;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-line-img{width:52px;height:62px;border-radius:8px;background:#eef2ec}.ds-line-what{display:grid}.ds-line-what b{font-weight:800;font-stretch:80%;text-transform:uppercase;line-height:1.15}.ds-line-what span{font-size:.85rem;color:#444c42}.ds-line-sub{align-self:stretch;display:flex;align-items:center;margin:-10px 0;padding:0 14px;border-radius:0 16px 16px 0;background:#ffd400;font-size:1.35rem;font-weight:900;font-stretch:62%;font-variant-numeric:tabular-nums}"
+      "description": "A small horizontal staked tag in the order sheet with a yellow price tab.",
+      "html": "<div class=\"ds-line\"><div class=\"ds-line__img\"></div><div class=\"ds-line__what\"><b>Mondo Grass</b><span>14 cm Pot · $15.99</span></div><div class=\"ds-line__sub\">$15.99</div></div>",
+      "css": ".ds-line { position:relative; display:grid; grid-template-columns:52px minmax(0,1fr) auto; gap:4px 12px; align-items:center; max-width:380px; margin-left:24px; padding:10px 0 10px 28px; border-radius:6px 14px 14px 6px; background:var(--surface); filter:drop-shadow(0 1px 1px rgba(20,34,25,.08)) drop-shadow(0 6px 10px rgba(20,34,25,.1)); font-family:var(--font); color:var(--ink); } .ds-line::before { content:\"\"; position:absolute; right:calc(100% - 1px); top:50%; width:24px; height:52%; translate:0 -50%; background:var(--surface); clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%); } .ds-line::after { content:\"\"; position:absolute; left:9px; top:50%; width:10px; height:10px; margin-top:-5px; border-radius:50%; background:var(--ground); box-shadow:inset 0 1.5px 2px rgba(0,0,0,.25); } .ds-line__img { width:52px; height:62px; border-radius:8px; background:var(--green-soft); } .ds-line__what { display:grid; } .ds-line__what span { font-size:.85rem; color:var(--ink-2); } .ds-line__sub { align-self:stretch; display:flex; align-items:center; margin:-10px 0; padding:0 12px; border-radius:0 14px 14px 0; background:var(--flash); font-size:1.25rem; font-weight:800; font-stretch:70%; font-variant-numeric:tabular-nums; }"
+    },
+    {
+      "name": "Plant Helper Messages",
+      "kind": "custom",
+      "refersTo": "chat-bot",
+      "description": "White bot bubble with suggestion chips; green user bubble.",
+      "html": "<div class=\"ds-log\"><div class=\"ds-msg ds-msg--me\">how much is delivery?</div><div class=\"ds-msg ds-msg--bot\"><p>Delivery costs aren't listed online. We confirm them with your invoice before you pay.</p><div class=\"ds-sugg\"><button type=\"button\">What areas do you deliver to?</button></div></div></div>",
+      "css": ".ds-log { display:flex; flex-direction:column; gap:12px; max-width:400px; padding:16px; background:var(--ground); font-family:var(--font); color:var(--ink); } .ds-msg { max-width:92%; } .ds-msg p { margin:0; } .ds-msg--bot { align-self:flex-start; padding:12px 14px; border:1px solid var(--line); border-radius:4px 16px 16px 16px; background:var(--surface); } .ds-msg--me { align-self:flex-end; padding:10px 14px; border-radius:16px 4px 16px 16px; background:var(--green); color:#fff; } .ds-sugg { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; } .ds-sugg button { min-height:36px; padding:0 12px; border:1px solid var(--line-2); border-radius:999px; background:var(--ground); font:inherit; font-size:.88rem; font-weight:600; cursor:pointer; } .ds-sugg button:hover { border-color:var(--green); color:var(--green); } .ds-sugg button:focus-visible { outline:2.5px solid var(--green); outline-offset:2px; }"
+    },
+    {
+      "name": "Order Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Labelled field in the order form; green focus ring, red when invalid.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-n\">Your name</label><input id=\"ds-n\"></div>",
+      "css": ".ds-field { display:grid; gap:4px; max-width:320px; font-family:var(--font); color:var(--ink); } .ds-field label { font-size:.88rem; font-weight:600; } .ds-field input { min-height:46px; padding:10px 14px; border:1px solid #7c8679; border-radius:12px; background:#fff; font:inherit; } .ds-field input:focus { outline:2.5px solid var(--green); outline-offset:1px; } .ds-field input[aria-invalid=\"true\"] { border-color:var(--red); box-shadow:0 0 0 1px var(--red); }"
     }
   ],
   "narrative": {
-    "northStar": "The Nursery Tag",
-    "overview": "Every plant is its own white injection-moulded stake label pushed into a saturated nursery-green bed. The tag is the one object the system is built from: it is the catalogue card, the plant detail sheet (front and back), the hero's 3D label, each line of the order, and even the search box. Each carries a punched hole, rounded shoulders and either a pointed stake below (vertical tags) or a stake to the left (horizontal tags). The page reads as a working nursery bench, not a lifestyle boutique.\n\nDensity is high and honest. Hundreds of tags sit in a grid with real photos, pot sizes and prices, and nothing is hidden behind hover. Type is one variable family, Archivo, pulled hard to its narrowest width for names and numbers so long plant names and prices stay big. Process-yellow marks money and the primary action. Signal red appears only when something is out of stock or wrong. Black poly-pot plastic is the deepest ground.\n\nMotion follows the physical tag. Tags rest at a slight tilt and lift upright when you reach for them, sheets arrive with a small settle, and nothing loops or bounces. Under reduced motion, transitions collapse to nothing and the 3D bench gives way to a flat tag.",
+    "northStar": "The Nursery Tag in Daylight",
+    "overview": "Every plant is its own white plastic stake label: the catalogue card, the plant sheet and the order line are all tags. They hang on a pale leaf-white ground, the way labels look on a bench in the morning. The system is calm on purpose. One deep nursery green does the speaking, one process yellow marks money, and everything else is white tag plastic, potting-soil ink and hairline rules. Room to breathe replaces the earlier drenched-green treatment, so the plants and their prices carry the page.\n\nThe tag is a physical object with fixed anatomy: rounded shoulders, a punched hole at the top centre, the plant photo, a normal-case name, an italic botanical line, light icons, and a full-width yellow price flash at the foot. Stakes (the pointed spike) appear only where a tag is shown driven into something: the 3D tag in the pot, the hero search tag and the order lines. Grid tags hang flat without tilt or stake and lift on soft shadows.\n\nMotion is quick and physical. It uses exponential ease-out with no bounce, and nothing is hidden until animated. A tag's photo morphs into the plant sheet, an added plant flies into the Order tag, and new tags rise in a short stagger. With reduced motion, only crossfades and state changes remain.",
     "keyCharacteristics": [
-      "One object, many jobs: the stake tag is the card, the sheet, the order line and the search field.",
-      "Saturated nursery-green field (never white) as the page ground.",
-      "Black condensed caps for names, italic for botanicals, yellow flash for prices.",
-      "Soft, physical drop shadows under the tags; no flat-UI borders around cards.",
-      "Pill-shaped controls throughout; tag silhouettes reserved for content objects."
+      "Pale leaf-white ground; white tags; deep green as the single accent.",
+      "Yellow means money, and nothing else is yellow.",
+      "One variable family (Archivo) carries everything, with the width axis as its main voice: condensed caps for headlines, normal-case names on tags.",
+      "Soft, low shadows; hairline rules for structure; no tilt.",
+      "Green owns a whole ground only in the story band; the footer sits on the deepest green."
     ],
     "rules": [
       {
-        "name": "The Flash Means Money Rule",
-        "body": "Yellow marks price and the act of buying (price bands, subtotals, primary add/send actions, selected size). It never decorates a heading block or a section background.",
+        "name": "The Money Is Yellow Rule",
+        "body": "Yellow appears only where a price or the act of ordering is. If a yellow surface carries no price and commits nothing, it is wrong.",
         "section": "colors"
       },
       {
-        "name": "The Red Is a Warning Rule",
-        "body": "Red appears only for out-of-stock, invalid input and error status. It is never an accent.",
+        "name": "The One Green Ground Rule",
+        "body": "Green fills a whole band once, in the story. The footer uses the deepest green. Every other section sits on leaf-white or tag-white.",
         "section": "colors"
       },
       {
-        "name": "The Green Ground Rule",
-        "body": "Content sits on the green field or on a white tag, never on a white page. White surfaces are always objects with a tag silhouette, a sheet or a field.",
-        "section": "colors"
-      },
-      {
-        "name": "The Printed Tag Rule",
-        "body": "Plant names, prices and section heads are uppercase, weight 900, width 62%. Botanical names are italic, never caps. Prices always use tabular figures.",
+        "name": "The Width Axis Rule",
+        "body": "Hierarchy comes from width and weight in one family. Never add a second typeface; reach for `wdth` 70–88 instead.",
         "section": "typography"
       },
       {
-        "name": "The Label Earns Its Place Rule",
-        "body": "Tracked uppercase labels name a field, a fact or a column. They are never a decorative kicker stacked above a heading.",
+        "name": "The Normal-Case Name Rule",
+        "body": "Catalogue tag names are normal case so long plant names stay readable. Condensed caps are reserved for headlines, the plant-sheet title and the 3D tag.",
         "section": "typography"
       },
       {
-        "name": "The Plastic Shadow Rule",
-        "body": "Shadows are soft and tinted toward the green bed, as if the tag were lifted off it. Never use a hard offset shadow.",
+        "name": "The Hanging Tag Rule",
+        "body": "Tags hang; they don't float. Shadows stay soft and low, lift is 4px at most, and nothing rotates.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** build every new content object as a tag: rounded shoulders, punched hole, stake, and the tag-rest shadow.",
-      "**Do** set names, prices and section heads in Archivo 900 at width 62%, uppercase, with tabular figures on every number.",
-      "**Do** put prices on the flash band and keep flash for money, buying and focus.",
-      "**Do** keep controls as pills (999px) at 44 to 48px tall, and circles for icon buttons.",
-      "**Do** use the drawn 24px / 1.75-stroke icon family for any new glyph.",
-      "**Do** let tags tilt at rest and straighten on hover or focus, using the pull curve (cubic-bezier(.22,1,.36,1)), and collapse motion under reduced-motion."
+      "Do put every price on yellow: the tag flash band, the order-line tab, the selected size row.",
+      "Do keep the punched hole on every tag face, and draw stakes only on the 3D tag, the search tag and order lines.",
+      "Do use the `edge` token for full-bleed bands so their content shares the column's left edge.",
+      "Do animate with the exponential ease-out `cubic-bezier(0.16, 1, 0.3, 1)` and no bounce, and keep every animated element visible without JS.",
+      "Do keep tap targets at 44px or more and full buttons at 48px.",
+      "Do use 1px hairlines (`hairline`, `hairline-strong`) to divide facts, steps, FAQ rows and size rows."
     ],
     "donts": [
-      "**Don't** put content on a white page. The ground is the green field, deep green or pot black.",
-      "**Don't** use red for anything except out-of-stock, invalid input or errors.",
-      "**Don't** give a content card plain uniform corners or a 1px border in place of the tag silhouette.",
-      "**Don't** use hard offset shadows. Tag shadows stay soft and green-tinted.",
-      "**Don't** put tracked uppercase kickers or eyebrows above headings. Tracked labels name fields and facts only.",
-      "**Don't** set botanical names in caps or plant common names in sentence case."
+      "Don't use yellow for anything that is not money or the order action. That includes decorative fills, highlights and section grounds.",
+      "Don't fill a section ground with green other than the story band, or with shade-house deep other than the footer.",
+      "Don't tilt grid tags, give them stakes, or use hard offset shadows.",
+      "Don't add a second typeface. Use Archivo's width axis instead.",
+      "Don't set catalogue tag names in caps.",
+      "Don't put small tracked-caps labels above headings. The only tracked caps are the wordmark's \"PERTH\" and the brand imprint printed on a tag face.",
+      "Don't use glyph or emoji icons. Every icon comes from the one drawn SVG family (24px grid, 1.75 stroke, round joins).",
+      "Don't float anything over the plants: no popups and no fixed widgets. The helper opens only as a side sheet when asked."
     ]
   }
 }

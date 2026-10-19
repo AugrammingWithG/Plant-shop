@@ -44,7 +44,7 @@ export function createBench(canvas, stage, { onReady } = {}) {
   fill.position.set(-3, 1.2, 2.5);
   scene.add(fill);
 
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.ShadowMaterial({ opacity: 0.32 }));
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.ShadowMaterial({ opacity: 0.2 }));
   ground.rotation.x = -Math.PI / 2;
   ground.receiveShadow = true;
   scene.add(ground);

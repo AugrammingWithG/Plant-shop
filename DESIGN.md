@@ -1,301 +1,311 @@
 ---
 name: Pot Plant Heaven Perth
-description: A Perth nursery storefront where every plant is its own white stake tag on a nursery-green field.
+description: Every plant is its own nursery stake label, shown in daylight with room to breathe.
 colors:
-  field: "#0d6b38"
-  field-deep: "#0a5730"
-  field-ink: "#ffffff"
-  field-ink-2: "#d3ecdb"
-  tag: "#ffffff"
-  tag-shade: "#eef2ec"
-  tag-edge: "#d6ddd3"
-  ink: "#10130f"
-  ink-2: "#444c42"
-  ink-lift: "#2a2f28"
-  flash: "#ffd400"
-  flash-deep: "#f2c500"
-  red: "#c8321a"
-  pot: "#141613"
-  pot-ink-2: "#b9c2b6"
+  leaf-white: "#f4f7f1"
+  tag-white: "#ffffff"
+  hairline: "#dde5d8"
+  hairline-strong: "#c3cfbe"
+  potting-ink: "#142219"
+  potting-ink-soft: "#4a584e"
+  nursery-green: "#0d6b38"
+  nursery-green-hover: "#0b5c30"
+  green-wash: "#e3efe2"
+  shade-house-deep: "#0a3a22"
+  on-deep-soft: "#c5dccb"
+  price-flash: "#ffd400"
+  price-flash-deep: "#f0c400"
+  sold-out-red: "#b8321a"
 typography:
   display:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "clamp(3.4rem, 7vw, 6rem)"
-    fontWeight: 900
-    lineHeight: 0.88
-    letterSpacing: "-0.005em"
-    fontVariation: "\"wdth\" 68"
-  headline:
-    fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "clamp(2.6rem, 6vw, 4.6rem)"
-    fontWeight: 900
+    fontSize: "clamp(3rem, 6.4vw, 5.75rem)"
+    fontWeight: 800
     lineHeight: 0.9
     letterSpacing: "-0.005em"
-    fontVariation: "\"wdth\" 62"
-  title:
+    fontVariation: "\"wdth\" 72"
+  headline:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "1.5rem"
-    fontWeight: 900
+    fontSize: "clamp(2.2rem, 4.6vw, 3.5rem)"
+    fontWeight: 800
     lineHeight: 0.95
-    letterSpacing: "0.005em"
-    fontVariation: "\"wdth\" 62"
-  price:
+    fontVariation: "\"wdth\" 72"
+  sheet-title:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "1.75rem"
-    fontWeight: 900
-    lineHeight: 1
-    fontFeature: "\"tnum\""
-    fontVariation: "\"wdth\" 62"
+    fontSize: "clamp(2rem, 3.6vw, 3rem)"
+    fontWeight: 800
+    lineHeight: 0.95
+    fontVariation: "\"wdth\" 72"
   quote:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 5vw, 3.8rem)"
+    fontSize: "clamp(1.6rem, 3.4vw, 2.6rem)"
+    fontWeight: 700
+    lineHeight: 1.15
+    fontVariation: "\"wdth\" 82"
+  title:
+    fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
+    fontSize: "1.12rem"
+    fontWeight: 700
+    lineHeight: 1.22
+    fontVariation: "\"wdth\" 88"
+  price:
+    fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
+    fontSize: "1.45rem"
     fontWeight: 800
-    lineHeight: 1.02
-    fontVariation: "\"wdth\" 75"
+    lineHeight: 1.1
+    fontFeature: "\"tnum\""
+    fontVariation: "\"wdth\" 70"
   body:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
     fontFeature: "\"lnum\""
-  botanical:
-    fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "0.92rem"
-    fontWeight: 400
-    lineHeight: 1.3
-  control:
-    fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 750
-    letterSpacing: "0.01em"
-    fontVariation: "\"wdth\" 85"
   label:
     fontFamily: "Archivo Variable, Archivo, Arial Narrow, system-ui, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 700
-    letterSpacing: "0.1em"
+    fontSize: "0.85rem"
+    fontWeight: 600
+    lineHeight: 1.4
 rounded:
-  tag-foot: "6px"
-  field: "12px"
+  hole: "50%"
+  stake-tag: "6px 20px 20px 6px"
+  order-line: "6px 14px 14px 6px"
   photo: "12px"
-  tag: "20px"
-  sheet: "26px"
+  field: "12px"
+  menu: "16px"
+  tag: "18px 18px 10px 10px"
+  sheet-tag: "24px 24px 12px 12px"
   pill: "999px"
 spacing:
-  gutter: "clamp(16px, 4vw, 56px)"
-  max: "1480px"
-  column-gap: "20px"
-  tag-row-gap: "56px"
-  section-y: "clamp(56px, 7vw, 96px)"
+  page-pad: "clamp(16px, 4vw, 56px)"
+  max-width: "1360px"
+  edge: "max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad)))"
+  section-y: "clamp(64px, 8vw, 112px)"
+  tag-gap-row: "36px"
+  tag-gap-col: "26px"
+  sheet-pad: "22px"
 components:
   button-flash:
-    backgroundColor: "{colors.flash}"
-    textColor: "{colors.ink}"
-    typography: "{typography.control}"
+    backgroundColor: "{colors.price-flash}"
+    textColor: "{colors.potting-ink}"
     rounded: "{rounded.pill}"
-    padding: "0 1.25em"
+    padding: "0 1.3em"
     height: "48px"
   button-flash-hover:
-    backgroundColor: "{colors.flash-deep}"
+    backgroundColor: "{colors.price-flash-deep}"
   button-ink:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.field-ink}"
-    typography: "{typography.control}"
+    backgroundColor: "{colors.potting-ink}"
+    textColor: "{colors.tag-white}"
     rounded: "{rounded.pill}"
-    padding: "0 1.25em"
+    padding: "0 1.3em"
     height: "48px"
-  button-ink-hover:
-    backgroundColor: "{colors.ink-lift}"
   button-ghost:
-    textColor: "{colors.field-ink}"
-    typography: "{typography.control}"
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
     rounded: "{rounded.pill}"
-    padding: "0 1.25em"
+    padding: "0 1.3em"
     height: "48px"
-  tag-card:
-    backgroundColor: "{colors.tag}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.tag}"
-    padding: "30px 12px 0"
-  tag-price-flash:
-    backgroundColor: "{colors.flash}"
-    textColor: "{colors.ink}"
-    typography: "{typography.price}"
-    padding: "10px 10px 10px 14px"
-  size-chip:
-    textColor: "{colors.ink}"
+  header-pill:
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
     rounded: "{rounded.pill}"
-    padding: "0 10px"
-    height: "32px"
-  size-chip-selected:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.field-ink}"
-  filter-pill-selected:
-    backgroundColor: "{colors.flash}"
-    textColor: "{colors.ink}"
+    height: "44px"
+  order-pill-filled:
+    backgroundColor: "{colors.nursery-green}"
+    textColor: "{colors.tag-white}"
     rounded: "{rounded.pill}"
+    height: "44px"
+  bed-chip:
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
+    rounded: "{rounded.pill}"
+    padding: "0 14px"
     height: "40px"
-  input-field:
-    backgroundColor: "{colors.tag}"
-    textColor: "{colors.ink}"
+  bed-chip-selected:
+    backgroundColor: "{colors.nursery-green}"
+    textColor: "{colors.tag-white}"
+  plant-tag:
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
+    rounded: "{rounded.tag}"
+    padding: "26px 10px 0"
+  price-flash-band:
+    backgroundColor: "{colors.price-flash}"
+    textColor: "{colors.potting-ink}"
+    padding: "9px 10px 9px 16px"
+  field:
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
     rounded: "{rounded.field}"
     padding: "10px 14px"
     height: "46px"
-  out-of-stock-badge:
-    backgroundColor: "{colors.red}"
-    textColor: "{colors.field-ink}"
-    rounded: "{rounded.pill}"
-    padding: "4px 10px"
+  chat-bot:
+    backgroundColor: "{colors.tag-white}"
+    textColor: "{colors.potting-ink}"
+    padding: "12px 14px"
+  chat-me:
+    backgroundColor: "{colors.nursery-green}"
+    textColor: "{colors.tag-white}"
+    padding: "10px 14px"
 ---
 
 # Design System: Pot Plant Heaven Perth
 
 ## Overview
 
-**Creative North Star: "The Nursery Tag"**
+**Creative North Star: "The Nursery Tag in Daylight"**
 
-Every plant is its own white injection-moulded stake label pushed into a saturated nursery-green bed. The tag is the one object the system is built from: it is the catalogue card, the plant detail sheet (front and back), the hero's 3D label, each line of the order, and even the search box. Each carries a punched hole, rounded shoulders and either a pointed stake below (vertical tags) or a stake to the left (horizontal tags). The page reads as a working nursery bench, not a lifestyle boutique.
+Every plant is its own white plastic stake label: the catalogue card, the plant sheet and the order line are all tags. They hang on a pale leaf-white ground, the way labels look on a bench in the morning. The system is calm on purpose. One deep nursery green does the speaking, one process yellow marks money, and everything else is white tag plastic, potting-soil ink and hairline rules. Room to breathe replaces the earlier drenched-green treatment, so the plants and their prices carry the page.
 
-Density is high and honest. Hundreds of tags sit in a grid with real photos, pot sizes and prices, and nothing is hidden behind hover. Type is one variable family, Archivo, pulled hard to its narrowest width for names and numbers so long plant names and prices stay big. Process-yellow marks money and the primary action. Signal red appears only when something is out of stock or wrong. Black poly-pot plastic is the deepest ground.
+The tag is a physical object with fixed anatomy: rounded shoulders, a punched hole at the top centre, the plant photo, a normal-case name, an italic botanical line, light icons, and a full-width yellow price flash at the foot. Stakes (the pointed spike) appear only where a tag is shown driven into something: the 3D tag in the pot, the hero search tag and the order lines. Grid tags hang flat without tilt or stake and lift on soft shadows.
 
-Motion follows the physical tag. Tags rest at a slight tilt and lift upright when you reach for them, sheets arrive with a small settle, and nothing loops or bounces. Under reduced motion, transitions collapse to nothing and the 3D bench gives way to a flat tag.
+Motion is quick and physical. It uses exponential ease-out with no bounce, and nothing is hidden until animated. A tag's photo morphs into the plant sheet, an added plant flies into the Order tag, and new tags rise in a short stagger. With reduced motion, only crossfades and state changes remain.
 
 **Key Characteristics:**
-- One object, many jobs: the stake tag is the card, the sheet, the order line and the search field.
-- Saturated nursery-green field (never white) as the page ground.
-- Black condensed caps for names, italic for botanicals, yellow flash for prices.
-- Soft, physical drop shadows under the tags; no flat-UI borders around cards.
-- Pill-shaped controls throughout; tag silhouettes reserved for content objects.
+- Pale leaf-white ground; white tags; deep green as the single accent.
+- Yellow means money, and nothing else is yellow.
+- One variable family (Archivo) carries everything, with the width axis as its main voice: condensed caps for headlines, normal-case names on tags.
+- Soft, low shadows; hairline rules for structure; no tilt.
+- Green owns a whole ground only in the story band; the footer sits on the deepest green.
 
 ## Colors
 
-The palette is the nursery itself: green bed, white tag plastic, black print and pots, a process-yellow price flash, and a red that only warns.
+The palette is daylight on a nursery bench: pale leaf-white ground, white plastic, dark soil ink, one nursery green and a process-yellow price flash.
 
 ### Primary
-- **Nursery Bed Green** (field): the page ground under the header and hero, the "How ordering works" and delivery sections, the 3D tag's brand line, the light-glyph colour on tags, and the success state. White text on it passes AA.
-- **Deep Bed Green** (field-deep): the plant-bed section and the order sheet, where the tags sit one step deeper. It also fills the punched holes on tags so they read as holes through to the bed.
+- **Nursery Green** (`nursery-green`): the single accent. Used for the hero headline, the wordmark, light icons, the selected bed chip, the filled Order tag, the order meter, the user's chat bubbles, link buttons, the focus ring (2.5px outline, 3px offset) and the whole story band ground. A darker press/hover step (`nursery-green-hover`) is used on green buttons and links.
+- **Shade-House Deep** (`shade-house-deep`): the footer ground only, with `on-deep-soft` for footer text and white for headings.
 
 ### Secondary
-- **Price Flash Yellow** (flash): the price band across the foot of every tag, the order-line subtotal, the primary action ("Add to order", "Send by WhatsApp", the header order button), selected filters and sizes, the order meter fill, the focus ring, and text selection. Ink-on-flash is about 13:1.
-- **Pressed Flash** (flash-deep): hover state for every flash surface.
-
-### Tertiary
-- **Signal Red** (red): out-of-stock badges, invalid field borders and error status text. Nothing else.
+- **Price Flash Yellow** (`price-flash`): money. Used for the band at every tag foot, the price tab on each order line, the selected pot-size row on the plant sheet, and the primary commit buttons ("Add to order", "Send order request", "Send by WhatsApp"). `price-flash-deep` is its hover state.
 
 ### Neutral
-- **Tag White** (tag): the face of every tag, sheet, dropdown and input.
-- **Tag Shade** (tag-shade): photo wells, light-glyph discs, static chips, quiet hover fills on white, and the order form's tray.
-- **Tag Edge** (tag-edge): hairlines and chip outlines on white.
-- **Print Black** (ink): all text on tags, the secondary button fill, selected size chips, and rule lines in fact lists.
-- **Faded Print** (ink-2): secondary text on tags, such as botanical names, descriptions and fact terms.
-- **Ink Lift** (ink-lift): hover for every black button. It is reused, but it lives as a literal value in the stylesheet rather than as a custom property.
-- **On-Field White** (field-ink) and **Pale Leaf** (field-ink-2): primary and secondary text on green.
-- **Poly-Pot Black** (pot) and **Pot Grey Text** (pot-ink-2): the utility strip and the story section, along with their secondary text. The 3D pot uses the same plastic.
+- **Leaf-White Ground** (`leaf-white`): the page, the side sheets (order, helper), and the punched holes.
+- **Tag White** (`tag-white`): every tag face, header pills, chips, inputs and the "How ordering works" band.
+- **Green Wash** (`green-wash`): photo placeholders, the count badge on the empty Order tag, and the hover fill on menu rows.
+- **Hairline** (`hairline`) and **Hairline Strong** (`hairline-strong`): 1px structural rules, chip and pill borders, and meter tracks.
+- **Potting Ink** (`potting-ink`) and **Potting Ink Soft** (`potting-ink-soft`): text and secondary text. Ink is also the dark button ground ("Find it", tag Add, "Send by SMS").
+- **Sold-Out Red** (`sold-out-red`): sold-out labels and invalid fields only.
 
 ### Named Rules
-**The Flash Means Money Rule.** Yellow marks price and the act of buying (price bands, subtotals, primary add/send actions, selected size). It never decorates a heading block or a section background.
+**The Money Is Yellow Rule.** Yellow appears only where a price or the act of ordering is. If a yellow surface carries no price and commits nothing, it is wrong.
 
-**The Red Is a Warning Rule.** Red appears only for out-of-stock, invalid input and error status. It is never an accent.
-
-**The Green Ground Rule.** Content sits on the green field or on a white tag, never on a white page. White surfaces are always objects with a tag silhouette, a sheet or a field.
+**The One Green Ground Rule.** Green fills a whole band once, in the story. The footer uses the deepest green. Every other section sits on leaf-white or tag-white.
 
 ## Typography
 
-**Display Font:** Archivo Variable (with Archivo, Arial Narrow, system-ui), loaded via Fontsource with the width axis
-**Body Font:** Archivo Variable, same family
-**Label/Mono Font:** none distinct; labels are Archivo at full width with tracking
+**Display Font:** Archivo Variable (with Archivo, Arial Narrow, system-ui)
+**Body Font:** Archivo Variable (the same family)
 
-**Character:** A single family worked across its width axis. At 62% it is the black condensed caps of a printed nursery tag, at 85 to 88% it is a compact UI voice, and at 100% it is plain, readable body copy. The italic carries botanical names the way a real tag prints them.
+**Character:** This is one hard-working grotesque used the way a label printer would. The width axis carries the hierarchy: heavy condensed caps (72–78% width) shout the headline voice, and normal-width text stays readable for names and care notes.
 
 ### Hierarchy
-- **Display** (900, clamp(3.4rem, 7vw, 6rem), 0.88): hero H1 only, uppercase and white, with the second word in flash. It is set at width 68% below 901px and 76% above, where it runs on one line behind the 3D tag.
-- **Headline** (900, clamp(2.6rem, 6vw, 4.6rem), 0.9, width 62%): section H2s, uppercase, balanced wrap.
-- **Title** (900, 1.5rem, 0.95, width 62%): plant common names on tags, uppercase. The same face at 1.3 to 2.4rem titles sheets, how-steps, FAQ and the order head. The plant sheet scales it to clamp(2.2rem, 4vw, 3.4rem).
-- **Price** (900, 1.75rem, width 62%, tabular): tag prices, size prices, order subtotals and totals.
-- **Quote** (800, clamp(2rem, 5vw, 3.8rem), 1.02, width 75%): Stephen's quote in the story section only.
-- **Body** (400, 1.0625rem, 1.55; 1rem under 600px): running copy, capped at 34 to 65ch depending on context.
-- **Botanical** (italic 400, 0.92rem, 1.3): Latin names under common names, in faded print.
-- **Control** (750, 1rem, width 85%): buttons, pills and nav (nav at 600, width 88%).
-- **Label** (700, 0.75 to 0.8rem, 0.1 to 0.14em tracking, uppercase): form legends, definition terms in fact lists, footer column heads, and the printed brand line on a tag back.
+- **Display** (800, `display` clamp, 0.9 line-height, uppercase, 72% width, 78% at 901px and up): the hero H1 only, in nursery green.
+- **Headline** (800, `headline` clamp, 0.95, uppercase, 72%): section titles (The Plant Bed, How it works, Delivery, Story). The side-sheet heads use the same voice at 2rem.
+- **Sheet title** (800, `sheet-title` clamp, uppercase, 72%): the plant name on the plant sheet's front tag.
+- **Quote** (700, `quote` clamp, 1.15, 82%): Stephen's words in the story band, quoted in full.
+- **Title** (700, 1.12rem, 1.22, 88%, normal case): the plant name on catalogue tags (1rem on phones). The italic botanical line sits under it at 0.9rem in soft ink.
+- **Price** (800, 70% width, tabular numerals): every price, at 1.45rem on tags, 1.35rem on size rows, 1.25rem on order tabs and 1.7rem on the order total.
+- **Body** (400, 1.0625rem, 1.6, lining numerals): running text, at 1rem under 600px. Descriptions are capped at 65ch.
+- **Label** (600, 0.82–0.95rem, soft ink): fact terms, pot sizes, counts and field labels.
 
 ### Named Rules
-**The Printed Tag Rule.** Plant names, prices and section heads are uppercase, weight 900, width 62%. Botanical names are italic, never caps. Prices always use tabular figures.
+**The Width Axis Rule.** Hierarchy comes from width and weight in one family. Never add a second typeface; reach for `wdth` 70–88 instead.
 
-**The Label Earns Its Place Rule.** Tracked uppercase labels name a field, a fact or a column. They are never a decorative kicker stacked above a heading.
+**The Normal-Case Name Rule.** Catalogue tag names are normal case so long plant names stay readable. Condensed caps are reserved for headlines, the plant-sheet title and the 3D tag.
 
 ## Layout
 
-The page width is capped at 1480px, with a responsive side gutter of clamp(16px, 4vw, 56px). The hero is a 12-column grid with a 20px column gap. The headline spans the full width on the back layer, the copy and search take columns 1 to 5, and the 3D stage takes columns 5 to the end, layered over the headline. The plant bed is a 240px sticky category rail beside an auto-fill tag grid (min 228px tracks, 56px row gap so stakes clear the next row). Sections breathe on clamp ramps of about 56 to 140px vertically.
+Content lines up on one edge. A centred column (`max-width` 1360px, `page-pad` side padding) and full-bleed bands share the same left edge through the `edge` token, so a band's background runs to the viewport while its content aligns with the column. The header is sticky on the ground and gains a hairline only once the page scrolls.
 
-Breakpoints are 1100px (nav hides, how-steps go to 2 columns), 900px (everything stacks, the rail becomes a horizontal pill scroller, the hero reorders to title, pot, buy row, lede, search and categories) and 600px (two-up tags with a smaller tilt, icon-only add and order buttons). Tap targets are 44 to 48px for primary controls.
+The hero is a 12-column grid. The headline spans the full width on the back layer, the copy (lede, search tag, facts line) takes columns 1–5, and the 3D stage takes 6–12 in front of the headline, with its prev/size/Add controls underneath. Under 900px it becomes one column in the order headline, lede, search, facts, then the 3D stage, so the search sits inside the first fold.
+
+The plant bed is an auto-fill grid of tags (min 240px, 36px row and 26px column gaps). Under 600px it is two columns with 20px/12px gaps. The 14 bed chips wrap onto two rows at 1024px and up, and scroll sideways with edge masks below that. Sections breathe with `section-y` vertical padding. Steps run 4 columns, then 2 at 1060px, then 1 at 600px. Delivery is a 7:5 split that stacks at 900px. The footer is a 2:1:1 grid.
+
+Breakpoints are 600, 900, 1024 and 1060px. At 1060px the header nav and contact menu collapse into the compact menu.
 
 ## Elevation & Depth
 
-Depth is physical. Tags are white plastic lifted off the bed by soft, green-tinted drop shadows (applied as `filter: drop-shadow` so the stake and hole silhouettes cast correctly), and holes are inset shadows punched into the plastic. Controls stay mostly flat. Only the flash button and order button carry a small soft drop, and the sticky header gains a shadow once it is stuck. The 3D bench in the hero is the deepest expression: a lit WebGL pot with a procedural plant and a canvas-painted tag.
+Depth is soft and ambient. Tags rest on a two-layer shadow (a tight 1px contact shadow plus a long, low, negatively spread drop) and lift 4px with a deeper shadow on hover or focus. Tags with stakes (the search tag and order lines) use `filter: drop-shadow` so the clipped stake casts with the tag. Menus and the fly-to-order thumbnail use the lift shadow. Sheets sit over a 42% potting-ink scrim. There are no hard offset shadows and no tilt.
 
 ### Shadow Vocabulary
-- **Tag rest** (`drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.28))`): every tag and the search tag.
-- **Card lift** (`drop-shadow(0 18px 18px rgba(3,25,12,.3))`): the delivery card, the largest tag.
-- **Punched hole** (`inset 0 2px 2px rgba(0,0,0,.45)`): the hole in every tag.
-- **Menu drop** (`0 18px 40px -16px rgba(0,0,0,.55)`): the contact dropdown.
-- **Header stuck** (`0 10px 24px -14px rgba(0,0,0,.55)`): sticky header after scroll.
+- **Tag at rest** (`box-shadow: 0 1px 2px rgba(20,34,25,.06), 0 12px 28px -18px rgba(20,34,25,.4)`): catalogue tags, empty states, sheet close button.
+- **Tag lifted** (`box-shadow: 0 2px 4px rgba(20,34,25,.06), 0 22px 40px -22px rgba(20,34,25,.45)`): tag hover/focus, menus, flat-tag fallback, fly thumbnail.
+- **Staked tag** (`filter: drop-shadow(0 1px 1px rgba(20,34,25,.08)) drop-shadow(0 10px 18px rgba(20,34,25,.12))`): the hero search tag. Order lines use the same pair, tightened to 6px 10px at 0.1.
+- **Punched hole** (`box-shadow: inset 0 1.5px 2px rgba(0,0,0,.22)`): the hole on every tag face.
 
 ### Named Rules
-**The Plastic Shadow Rule.** Shadows are soft and tinted toward the green bed, as if the tag were lifted off it. Never use a hard offset shadow.
+**The Hanging Tag Rule.** Tags hang; they don't float. Shadows stay soft and low, lift is 4px at most, and nothing rotates.
 
 ## Shapes
 
-There are two shape families, and they are never mixed. **Content objects are tags**: rounded shoulders on top (20px, 26px on sheets, 28px on the delivery card), near-square feet (6 to 10px), a punched hole centred near the top, and a pointed stake clipped below. Horizontal tags (the search field, order lines) turn this 90 degrees: 6px corners on the stake side, 16 to 22px on the free end, and the stake points left. **Controls are pills**: buttons, chips, filters, selects and search inputs are fully round (999px), and icon buttons are circles. Photos inside tags use 12 to 14px corners. Order-form text fields are the one exception, at 12px.
+The silhouette is a nursery label. Tags have generous top shoulders and tighter feet (`tag`, `sheet-tag`), and every tag face carries a punched hole at top centre. Staked tags are horizontal, with a small left radius where the stake joins and a pointed stake drawn as a clipped polygon off the left edge (`stake-tag`, `order-line`). Photos sit inset with 12px corners. Controls are full pills or 44px circles. Inputs use 12px corners, or a pill in the helper. Chat bubbles use a 16px radius with one 4px corner pointing at the speaker. Side sheets round only their inner edge (24px) and go square on phones.
 
 ## Components
 
 ### Buttons
-- **Shape:** full pill (999px), 48px tall, 2px transparent border reserved for ghost variants.
-- **Flash (primary):** flash fill, ink text, weight 750 at width 85%, with a soft drop and an inset top highlight. Hover: pressed flash.
-- **Ink (secondary):** black fill, white text. Hover: ink lift. The tag's "Add" button and the search's "Find it" share this.
-- **Ghost:** 70% white outline on green; ghost-ink is a black outline on white.
-- **Press:** translateY(1px) scale(.98), using the ease-out curve. Disabled: 45% opacity.
-- **Added state:** add buttons turn bed green briefly to confirm.
+Buttons are tactile pills that scale to 0.98 on press. Every target is at least 44px, and full buttons are 48px.
+- **Shape:** full pill (`pill`), 700 weight at 88% width.
+- **Flash (primary commit):** yellow with ink text. Used only for adding to the order and sending it. Hover deepens the yellow.
+- **Ink:** potting ink with white text, hovering to a lighter ink. Used for search submit, tag Add, SMS send, and start-new-order.
+- **Ghost:** tag-white with a strong hairline border that turns ink on hover ("Show more plants", WhatsApp once email is live).
+- **Added state:** any add control turns nursery green with white text after adding.
+- **Link button:** green, underlined at 1px with a 0.2em offset, for quiet actions ("Copy order", "Keep browsing", "Ask the plant helper").
 
-### Chips
-- **Size chips (on tags):** 32px pill, 1.5px tag-edge outline, weight 650 at width 88%. Selected: black fill, white text. Out of stock: struck through. "More sizes": green text, dashed outline.
-- **Light filters (on green):** 40px pill with a drawn light glyph and a 40% white outline. Selected: flash fill, ink text.
-- **Category stakes (hero):** 38px outlined pill with a tabular count in pale leaf.
+### Header
+A single quiet row on the ground. It holds the wordmark (a green tag glyph with the condensed caps name over tracked "PERTH"), four soft-ink nav links that underline on hover, the "Ask" pill, the call/message circle, and the Order pill. The Order pill shows a count badge and a running total. Once it has items it fills green and its count badge turns yellow, and it bumps (scale 1.07) when a plant lands. Under 1060px the nav and contact collapse into the compact menu. Under 600px "Ask" shrinks to an icon circle that keeps its accessible label.
 
-### Cards / Containers
-- **The Tag (signature):** tag white, 20px shoulders and 6px feet, punched hole, clipped stake, tag-rest shadow, and a per-item tilt of about -1 to 1 degree (reduced to 40% on mobile). Hover or focus: it lifts 10px and straightens on the pull curve. Its stack runs top to bottom: photo well (6:7), condensed name, italic botanical, light-glyph discs, size chips, then a full-bleed flash band with price and an ink "Add" button.
-- **Plant sheet:** a tag front (photo gallery, name, categories, barcode) and a tag back (brand line, size list with flash selection, quantity pill, fact list, description) side by side, stacked under 900px.
-- **Delivery card:** a large tag with a 2-column fact list ruled in 2px ink. One fact value sits on a flash highlight.
+### Compact Menu
+This is a 44px circle that opens a fixed white panel 16px from both sides of the screen. It has a 16px radius, the lift shadow and a 4px drop-in. Section links come first (1.05rem, 650), then a hairline, then call, SMS and WhatsApp rows with icons. Rows fill green-wash on hover.
+
+### Bed Chips
+These are pills (40px tall) with a soft-ink count. The selected chip is nursery green with white text and pale-green count. Choosing Hedging reveals height sub-chips (34px) after a hairline divider, and the selected sub-chip is ink. Light filters are 46px pills with a green icon. When checked they fill with green-wash and take a green border and green text.
+
+### Plant Tag (signature)
+- **Anatomy:** white face, `tag` radius, `plant-tag` padding, punched hole at top centre, 5:6 photo in a 12px inset frame, normal-case title, italic botanical line, a meta row (pot size or "N pot sizes" plus light icons), and the price flash band.
+- **Price flash:** a full-width yellow band bleeding to the tag edges at the foot. It holds the price in condensed tabular figures ("from" in small type when several sizes exist) and one action: a dark "Add" pill for single-size plants, an outlined "Sizes" pill otherwise, or a red "Sold out" chip.
+- **States:** rests on the tag shadow and lifts 4px with the lift shadow on hover/focus-within, while the photo scales 1.03.
+- **Entrance:** new tags rise 12px and fade in over 500ms, staggered 45ms each and capped at 8 steps.
+
+### Search Tag
+The hero search is a blank horizontal staked tag. A condensed green caps label ("What are you planting?") sits over a write-on line (an input with a 1.5px ink underline) and an ink "Find it" pill. Focus outlines the whole tag in green. The catalogue's own search is a plain 46px pill with an inline magnifier.
+
+### Plant Sheet
+Two tag faces sit side by side (5:6), each with the `sheet-tag` radius and a darker punched hole. The front holds the small brand imprint printed on the tag, the swipeable photo gallery, the condensed caps title, the botanical line, light icons and a decorative barcode. The back holds the pot-size rows (50px, hairline-divided, with the selected row filled yellow), the quantity stepper and a yellow "Add to order", then a two-column fact list, bed chips and the description at 65ch. On phones the two faces stack and scroll together. The tag photo morphs into the sheet photo via a View Transition (`plant-photo`, 450ms, exponential ease-out) and back on close.
+
+### Order Sheet
+A 460px side sheet on the leaf-white ground slides in 32px from the right. It has a sticky condensed caps head, a 10px green meter toward the $350 minimum with plain-language progress, and order lines. Each order line is a small horizontal staked tag: a 52×62 photo, name, size and unit price, a trash/minus and plus stepper, and a yellow price tab that bleeds to the right edge. The form sits on tag-white below a hairline, with fields, a subtotal in condensed figures, and the send buttons (yellow email/WhatsApp, ink SMS, link "Copy order").
+
+### Order Done
+The order form is replaced in place by a green reference code (700, 0.08em tracking), a condensed caps heading ("Order request sent"), a plain sentence naming who will call and on which number, an ink "Start a new order" button and a "Keep browsing" link.
 
 ### Inputs / Fields
-- **Search tag:** a horizontal white tag with a left stake and hole. Its input sits on a 2px ink underline, with the label set in condensed caps. Focus-within draws a 3px flash ring.
-- **Pill search and selects:** white pills with drawn chevrons and magnifier icons inline.
-- **Order form fields:** white, 12px radius, 1.5px border. Focus: 3px flash outline plus an ink border. Invalid: red border and ring.
+- **Style:** white, 1px mid-grey-green border, 12px radius, 46px minimum height, labels at 0.88rem/600 with "(optional)" in soft ink.
+- **Focus:** a 2.5px nursery-green outline.
+- **Error:** the border and a 1px ring turn sold-out red, with the message in red in the status line.
 
-### Navigation
-- **Utility strip:** pot black, 0.82rem at width 88%, facts separated by flash dots, phone number in white bold.
-- **Header:** sticky on green, with a tag-silhouette wordmark (condensed caps, "PERTH" tracked in flash). Nav links get a 2px flash underline on hover. "Call or message" is an outlined pill that opens a white dropdown. The order button is a flash pill showing a tabular count and total. Nav hides under 1100px.
+### Plant Helper
+This side sheet shares the order sheet's frame. The head reads "Plant helper" with a soft-ink subline saying the answers come from the catalogue and delivery info. Bot messages are white bubbles with a hairline and a 4px top-left corner. The user's messages are nursery green with white text and a 4px top-right corner. Each message rises 6px over 350ms. Suggestion chips are 36px leaf-white pills that turn green on hover. Result rows are leaf-white 12px cards: a 56×66 photo, name, botanical name and "from" price, and a 38px circle action. A green "See all N in the plant bed" link follows. The input is a pill with a 48px green send circle on a tag-white footer.
 
-### Order Line (signature)
-Each line in the order sheet is a small horizontal tag on the deep-green sheet, with a left stake, a hole, a thumbnail, condensed caps name, size and unit price, circular stepper buttons (the minus becomes a trash icon at quantity 1), and a flash subtotal panel on the free end. A 14px flash meter above the lines fills toward the $350 minimum.
-
-### Icons
-One drawn family on a 24px grid with 1.75 stroke and round caps and joins, drawn in currentColor: sun, part shade, shade, phone, SMS, WhatsApp, search, prev/next, close, plus/minus, check, turn, tag, copy and trash. Light glyphs sit in 30px tag-shade discs in bed green.
+### Story and Footer
+The story is the one green band, with a white condensed caps headline, pale-green body copy at 58ch, and Stephen's quote in the quote style. The footer sits on shade-house deep with a condensed caps brand line, link columns at a 36px row height, and a faint white hairline above the small print.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** build every new content object as a tag: rounded shoulders, punched hole, stake, and the tag-rest shadow.
-- **Do** set names, prices and section heads in Archivo 900 at width 62%, uppercase, with tabular figures on every number.
-- **Do** put prices on the flash band and keep flash for money, buying and focus.
-- **Do** keep controls as pills (999px) at 44 to 48px tall, and circles for icon buttons.
-- **Do** use the drawn 24px / 1.75-stroke icon family for any new glyph.
-- **Do** let tags tilt at rest and straighten on hover or focus, using the pull curve (cubic-bezier(.22,1,.36,1)), and collapse motion under reduced-motion.
+- **Do** put every price on yellow: the tag flash band, the order-line tab, the selected size row.
+- **Do** keep the punched hole on every tag face, and draw stakes only on the 3D tag, the search tag and order lines.
+- **Do** use the `edge` token for full-bleed bands so their content shares the column's left edge.
+- **Do** animate with the exponential ease-out `cubic-bezier(0.16, 1, 0.3, 1)` and no bounce, and keep every animated element visible without JS.
+- **Do** keep tap targets at 44px or more and full buttons at 48px.
+- **Do** use 1px hairlines (`hairline`, `hairline-strong`) to divide facts, steps, FAQ rows and size rows.
 
 ### Don't:
-- **Don't** put content on a white page. The ground is the green field, deep green or pot black.
-- **Don't** use red for anything except out-of-stock, invalid input or errors.
-- **Don't** give a content card plain uniform corners or a 1px border in place of the tag silhouette.
-- **Don't** use hard offset shadows. Tag shadows stay soft and green-tinted.
-- **Don't** put tracked uppercase kickers or eyebrows above headings. Tracked labels name fields and facts only.
-- **Don't** set botanical names in caps or plant common names in sentence case.
+- **Don't** use yellow for anything that is not money or the order action. That includes decorative fills, highlights and section grounds.
+- **Don't** fill a section ground with green other than the story band, or with shade-house deep other than the footer.
+- **Don't** tilt grid tags, give them stakes, or use hard offset shadows.
+- **Don't** add a second typeface. Use Archivo's width axis instead.
+- **Don't** set catalogue tag names in caps.
+- **Don't** put small tracked-caps labels above headings. The only tracked caps are the wordmark's "PERTH" and the brand imprint printed on a tag face.
+- **Don't** use glyph or emoji icons. Every icon comes from the one drawn SVG family (24px grid, 1.75 stroke, round joins).
+- **Don't** float anything over the plants: no popups and no fixed widgets. The helper opens only as a side sheet when asked.

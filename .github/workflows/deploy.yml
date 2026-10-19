@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Called by the nightly catalogue sync, whose own push can't trigger this workflow.
+  workflow_call:
 
 permissions:
   contents: read
@@ -19,14 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}/
+      - name: Build for /<repo-name>/
+        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}/" npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
