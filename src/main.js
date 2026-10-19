@@ -7,6 +7,8 @@ import { money, imageUrl, minPrice, firstAvailable, sizeChip, botanical, escapeH
 import { GROUPS, HEDGE_SIZES, groupById, inGroup } from "./groups.js";
 import { createHelper } from "./helper.js";
 import { EMAILJS, emailOrdersEnabled } from "./config.js";
+import { reveal, onHeroProgress, drawTerrain } from "./motion.js";
+import { renderChart } from "./chart.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -51,6 +53,7 @@ fetch(`${import.meta.env.BASE_URL}data/products.json`)
       $("[data-synced]").textContent = `Stock updated ${d.toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}`;
     }
     renderBeds();
+    renderNumbers();
     bindTools();
     renderBed();
     bindOrder();
@@ -154,6 +157,28 @@ function writeUrlState() {
   if (!state.instock) params.set("all", "1");
   const qs = params.toString();
   history.replaceState(history.state, "", `${location.pathname}${qs ? `?${qs}` : ""}${location.hash}`);
+}
+
+/* ---------- the nursery in numbers ---------- */
+
+function renderNumbers() {
+  // Ranked largest first, so the columns read as a comparison.
+  const rows = GROUPS.map((g) => ({ id: g.id, label: g.label, value: catalogue.products.filter((p) => inGroup(p, g.id)).length }))
+    .filter((r) => r.value)
+    .sort((a, b) => b.value - a.value);
+  const stock = $("[data-stat=\"stock\"]");
+  stock.dataset.countTo = catalogue.products.length;
+  stock.textContent = catalogue.products.length;
+  const beds = stock.closest(".stats").querySelectorAll("dd")[1];
+  beds.dataset.countTo = rows.length;
+  beds.textContent = rows.length;
+  renderChart($("[data-chart]"), $("[data-chart-table]"), rows, {
+    onPick: (id) => {
+      setBed(id);
+      $("#bed").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth" });
+    },
+  });
+  drawTerrain($("[data-terrain]"));
 }
 
 /* ---------- the plant bed ---------- */
@@ -290,15 +315,8 @@ function renderBed({ animate = false, appendFrom = 0 } = {}) {
   } else {
     tags.innerHTML = list.length ? shown.map((p, i) => tagHtml(p, i)).join("") : emptyHtml();
   }
-  if ((animate || appendFrom) && !reduceMotion()) {
-    $$(":scope > .tag", tags)
-      .slice(appendFrom)
-      .forEach((li, i) => {
-        li.style.setProperty("--i", Math.min(i, 8));
-        li.classList.add("is-entering");
-        li.addEventListener("animationend", () => li.classList.remove("is-entering"), { once: true });
-      });
-  }
+  // New cards rise into place as they scroll into view.
+  reveal($$(":scope > .tag", tags).slice(appendFrom), "rise");
   $("[data-more]").hidden = shown.length >= list.length;
   $("[data-more]").textContent = `Show more plants (${list.length - shown.length} more)`;
 }
@@ -845,7 +863,11 @@ function initFeature() {
     const { product: p, form } = items[index];
     const link = $("[data-feature-link]");
     link.href = `#plant/${p.slug}`;
-    link.innerHTML = `${esc(p.name)}${botanical(p) ? ` <em>${esc(botanical(p))}</em>` : ""}`;
+    link.textContent = p.name;
+    $("[data-feature-bot]").innerHTML = `${botanical(p) ? `<em>${esc(botanical(p))}</em>` : ""}${lightHtml(p)}`;
+    $("[data-feature-thumb]").innerHTML = p.images[0] ? `<img src="${imageUrl(p.images[0], 128, 128)}" alt="" width="64" height="64">` : "";
+    $("[data-feature-index]").textContent = String(index + 1).padStart(2, "0");
+    $("[data-feature-total]").textContent = String(items.length).padStart(2, "0");
     sizeSel.innerHTML = p.variants
       .map((v) => `<option value="${v.id}"${v.inStock ? "" : " disabled"}>${esc(v.label || "Each")}: ${money(v.price)}</option>`)
       .join("");
@@ -882,8 +904,10 @@ function initFeature() {
     return;
   }
   import("./bench3d.js").then(({ createBench }) => {
-    bench = createBench(canvas, stage, { onReady: () => stage.classList.add("is-live") });
+    bench = createBench(canvas, stage, { glasshouse: true, onReady: () => stage.classList.add("is-live") });
     const { product, form } = items[index];
     bench.show(product, form, 1, sizeSel.value);
+    // Scrolling past the hero turns the pot, so the tag shows its back on the way out.
+    onHeroProgress((p) => bench.setScroll(p));
   });
 }

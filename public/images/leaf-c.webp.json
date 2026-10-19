@@ -1,0 +1,4 @@
+{
+  "prompt": "Procedural 3D render, not AI-generated: scripts/leaves/leaves.html?v=c (Three.js r180, MeshPhysicalMaterial leaves with a canvas vein texture, key+rim+hemisphere light, orthographic, transparent ground), captured at 1600px in headless Chrome; depth of field baked with ffmpeg (blur sigma 1.6, brightness 0.8) and encoded to WebP with alpha. Pot Plant Heaven Perth, 2026-10-20.",
+  "createdAt": "2026-10-19T16:06:01.279Z"
+}

@@ -8,31 +8,46 @@
       name="description"
       content="Over 600 plants from a Camillo nursery, from hedging, natives and palms to indoor plants and succulents. Real pot sizes and prices. Order online for delivery across Perth Metro and Mandurah."
     />
-    <meta name="theme-color" content="#f4f7f1" />
+    <meta name="theme-color" content="#0b1711" />
     <meta property="og:title" content="Pot Plant Heaven Perth" />
     <meta property="og:description" content="Perth-proof plants, delivered. Browse real stock, real pot sizes and real prices." />
     <meta property="og:type" content="website" />
     <meta name="view-transition" content="same-origin" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://static.wixstatic.com" crossorigin />
+    <script>
+      // Turn on scroll motion before first paint; if the app never loads, show everything after 3s.
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion");
+        setTimeout(function () {
+          if (!window.__motionReady) document.documentElement.classList.remove("motion");
+        }, 3000);
+      }
+    </script>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <a class="skip" href="#bed">Skip to the plants</a>
 
+    <!-- Rendered leaf branches framing the page at different focal depths. -->
+    <div class="foliage" aria-hidden="true">
+      <img class="leaf leaf--hero-tr" src="/images/leaf-a.webp" alt="" data-depth="0.18" width="1200" height="1200" />
+      <img class="leaf leaf--hero-l" src="/images/leaf-b-soft.webp" alt="" data-depth="-0.08" width="900" height="900" />
+    </div>
+
     <header class="top">
       <a class="mark" href="#top" aria-label="Pot Plant Heaven Perth, back to top">
-        <svg class="mark__tag" viewBox="0 0 40 64" aria-hidden="true">
-          <path d="M6 0h28a6 6 0 0 1 6 6v36L20 64 0 42V6a6 6 0 0 1 6-6Z" />
-          <circle cx="20" cy="9" r="3.4" />
+        <svg class="mark__leaf" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M6 26C6 13 14 5 27 5c0 13-8 21-21 21Z" />
+          <path d="M6 26 19 13" fill="none" />
         </svg>
         <span class="mark__words"><span>Pot Plant Heaven</span><span>Perth</span></span>
       </a>
       <nav class="top__nav" aria-label="Main">
         <a href="#bed">Plants</a>
+        <a href="#numbers">The nursery</a>
         <a href="#how">How it works</a>
         <a href="#delivery">Delivery</a>
-        <a href="#story">Our story</a>
       </nav>
       <div class="top__actions">
         <button class="ask-btn" type="button" data-open-helper><span>Ask</span></button>
@@ -45,6 +60,7 @@
           <div class="menu__panel">
             <nav aria-label="Sections">
               <a href="#bed">Plants</a>
+              <a href="#numbers">The nursery</a>
               <a href="#how">How it works</a>
               <a href="#delivery">Delivery</a>
               <a href="#story">Our story</a>
@@ -62,24 +78,22 @@
     <main>
       <section class="hero" id="top" aria-labelledby="hero-title">
         <h1 class="hero__title" id="hero-title">
-          <span>Perth-proof</span>
-          <span>plants,</span>
-          <span>delivered.</span>
+          <span><span class="ln">Perth-proof plants,</span></span>
+          <span><span class="ln">delivered.</span></span>
         </h1>
         <div class="hero__copy">
           <p class="hero__lede">
-            <strong data-stock-count>640</strong> plants from our Camillo nursery, each with its real pot size and price.
+            <strong data-stock-count>640</strong> plants from our Camillo nursery, each with its real pot size and price, delivered across
+            Perth and Mandurah.
           </p>
           <form class="find" role="search" data-hero-search>
-            <label class="find__label" for="hero-q">What are you planting?</label>
-            <div class="find__row">
-              <input id="hero-q" name="q" type="search" placeholder="e.g. lilly pilly" autocomplete="off" />
-              <button type="submit">Find it</button>
-            </div>
+            <label class="visually-hidden" for="hero-q">What are you planting?</label>
+            <input id="hero-q" name="q" type="search" placeholder="What are you planting?" autocomplete="off" />
+            <button type="submit">Find it</button>
           </form>
           <p class="hero__facts">
             <span>Perth Metro &amp; Mandurah</span>
-            <span>Delivery Mon–Sat, 1–9 pm</span>
+            <span>Mon–Sat, 1–9 pm</span>
             <span>$350 minimum</span>
           </p>
           <p class="hero__ask">Not sure what suits your spot? <button type="button" data-open-helper>Ask the plant helper</button></p>
@@ -87,54 +101,90 @@
 
         <div class="hero__stage" data-stage>
           <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
-          <p class="hero__hint" data-hero-hint>Drag the pot to turn the tag</p>
+          <p class="hero__hint">Drag to turn the specimen</p>
         </div>
 
-        <div class="feature" data-feature aria-live="polite">
-          <button class="feature__nav" type="button" data-feature-prev aria-label="Previous plant"></button>
-          <div class="feature__body">
-            <p class="feature__name"><a href="#" data-feature-link></a></p>
-            <div class="feature__buy">
-              <label class="visually-hidden" for="feature-size">Pot size</label>
-              <select id="feature-size" data-feature-size></select>
-              <button class="btn btn--flash" type="button" data-feature-add>Add to order</button>
+        <div class="specimen glass" data-feature aria-live="polite">
+          <p class="specimen__label">Specimen <span data-feature-index>01</span> / <span data-feature-total>07</span></p>
+          <div class="specimen__id">
+            <span class="specimen__thumb" data-feature-thumb></span>
+            <div>
+              <p class="specimen__name"><a href="#" data-feature-link></a></p>
+              <p class="specimen__bot" data-feature-bot></p>
             </div>
           </div>
-          <button class="feature__nav feature__nav--next" type="button" data-feature-next aria-label="Next plant"></button>
+          <div class="specimen__buy">
+            <label class="visually-hidden" for="feature-size">Pot size</label>
+            <select id="feature-size" data-feature-size></select>
+            <button class="btn btn--lime" type="button" data-feature-add>Add</button>
+          </div>
+          <div class="specimen__nav">
+            <button class="icon-btn" type="button" data-feature-prev aria-label="Previous plant"></button>
+            <button class="icon-btn" type="button" data-feature-next aria-label="Next plant"></button>
+          </div>
         </div>
       </section>
 
+      <section class="numbers" id="numbers" aria-labelledby="numbers-title">
+        <div class="numbers__head">
+          <h2 id="numbers-title" data-reveal="wipe">The nursery in numbers</h2>
+          <p data-reveal="rise">Live from our stock list, refreshed every night.</p>
+        </div>
+        <dl class="stats">
+          <div class="stat" data-reveal="focus"><dt>Plants in stock</dt><dd data-count-to="640" data-stat="stock">640</dd></div>
+          <div class="stat" data-reveal="focus"><dt>Plant beds</dt><dd data-count-to="14">14</dd></div>
+          <div class="stat" data-reveal="focus"><dt>Delivery minimum</dt><dd data-count-to="350" data-prefix="$">$350</dd></div>
+          <div class="stat" data-reveal="focus"><dt>Typical delivery</dt><dd>7–10 <small>days</small></dd></div>
+        </dl>
+        <figure class="chart glass" data-reveal="focus">
+          <figcaption class="chart__head">
+            <span class="chart__title">Stock by bed</span>
+            <span class="chart__note">Tap a bed to browse it</span>
+          </figcaption>
+          <div class="chart__plot" data-chart role="group" aria-label="Plants in stock by bed"></div>
+          <details class="chart__table">
+            <summary>View as a table</summary>
+            <table data-chart-table>
+              <thead><tr><th scope="col">Bed</th><th scope="col">Plants</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </details>
+        </figure>
+      </section>
+
       <section class="bed" id="bed" aria-labelledby="bed-title">
+        <img class="leaf leaf--bed" src="/images/leaf-b-soft.webp" alt="" aria-hidden="true" data-depth="0.12" width="900" height="900" loading="lazy" />
         <div class="bed__head">
-          <h2 id="bed-title">The plant bed</h2>
-          <p>Everything we stock, with real pot sizes and prices.</p>
+          <h2 id="bed-title" data-reveal="wipe">The plant bed</h2>
+          <p data-reveal="rise">Everything we stock, with real pot sizes and prices.</p>
         </div>
 
-        <div class="beds" role="group" aria-label="Plant groups">
-          <ul class="beds__list" data-beds></ul>
+        <div class="filters glass" data-reveal="rise">
+          <div class="beds" role="group" aria-label="Plant beds">
+            <ul class="beds__list" data-beds></ul>
+          </div>
+          <form class="tools" data-tools>
+            <div class="tools__search">
+              <label class="visually-hidden" for="bed-q">Search plants</label>
+              <input id="bed-q" name="q" type="search" placeholder="Search plants" autocomplete="off" />
+            </div>
+            <fieldset class="light-filter">
+              <legend class="visually-hidden">Light your spot gets</legend>
+              <label><input type="checkbox" name="light" value="sun" /><span data-icon="sun">Sun</span></label>
+              <label><input type="checkbox" name="light" value="part" /><span data-icon="part">Part shade</span></label>
+              <label><input type="checkbox" name="light" value="shade" /><span data-icon="shade">Shade</span></label>
+            </fieldset>
+            <div class="tools__sort">
+              <label class="visually-hidden" for="bed-sort">Sort</label>
+              <select id="bed-sort" name="sort">
+                <option value="featured">Sort: nursery order</option>
+                <option value="price-asc">Price, low to high</option>
+                <option value="price-desc">Price, high to low</option>
+                <option value="name">Name, A–Z</option>
+              </select>
+            </div>
+          </form>
         </div>
-
-        <form class="tools" data-tools>
-          <div class="tools__search">
-            <label class="visually-hidden" for="bed-q">Search plants</label>
-            <input id="bed-q" name="q" type="search" placeholder="Search plants" autocomplete="off" />
-          </div>
-          <fieldset class="light-filter">
-            <legend class="visually-hidden">Light your spot gets</legend>
-            <label><input type="checkbox" name="light" value="sun" /><span data-icon="sun">Sun</span></label>
-            <label><input type="checkbox" name="light" value="part" /><span data-icon="part">Part shade</span></label>
-            <label><input type="checkbox" name="light" value="shade" /><span data-icon="shade">Shade</span></label>
-          </fieldset>
-          <div class="tools__sort">
-            <label class="visually-hidden" for="bed-sort">Sort</label>
-            <select id="bed-sort" name="sort">
-              <option value="featured">Sort: nursery order</option>
-              <option value="price-asc">Price, low to high</option>
-              <option value="price-desc">Price, high to low</option>
-              <option value="name">Name, A–Z</option>
-            </select>
-          </div>
-        </form>
 
         <p class="bed__count" role="status"><span data-count></span> <button type="button" class="link-btn" data-toggle-stock></button></p>
         <ol class="tags" data-tags></ol>
@@ -144,29 +194,32 @@
       </section>
 
       <section class="how" id="how" aria-labelledby="how-title">
-        <h2 id="how-title">How ordering works</h2>
-        <ol class="how__steps">
-          <li>
-            <h3>Fill your order</h3>
-            <p>Pick a pot size on any plant and add it. Delivery starts at $350.</p>
-          </li>
-          <li>
-            <h3>Send the request</h3>
-            <p>Add your name, suburb and phone, then send it to the nursery.</p>
-          </li>
-          <li>
-            <h3>We confirm</h3>
-            <p>We check stock and your delivery day, then invoice you. Card, PayPal or Alipay.</p>
-          </li>
-          <li>
-            <h3>Delivered</h3>
-            <p>Mon–Sat, 1–9 pm across Perth Metro and Mandurah, usually within 7–10 business days.</p>
-          </li>
-        </ol>
+        <div class="how__panel glass">
+          <h2 id="how-title" data-reveal="wipe">How ordering works</h2>
+          <div class="how__track" aria-hidden="true"><span class="how__line"></span><span class="how__rider"></span></div>
+          <ol class="how__steps">
+            <li data-reveal="rise">
+              <h3>Fill your order</h3>
+              <p>Pick a pot size on any plant and add it. Delivery starts at $350.</p>
+            </li>
+            <li data-reveal="rise">
+              <h3>Send the request</h3>
+              <p>Add your name, suburb and phone, then send it to the nursery.</p>
+            </li>
+            <li data-reveal="rise">
+              <h3>We confirm</h3>
+              <p>We check stock and your delivery day, then invoice you. Card, PayPal or Alipay.</p>
+            </li>
+            <li data-reveal="rise">
+              <h3>Delivered</h3>
+              <p>Mon–Sat, 1–9 pm across Perth Metro and Mandurah, usually within 7–10 business days.</p>
+            </li>
+          </ol>
+        </div>
       </section>
 
       <section class="delivery" id="delivery" aria-labelledby="delivery-title">
-        <div class="delivery__card">
+        <div class="schedule glass" data-reveal="focus">
           <h2 id="delivery-title">Delivery &amp; hours</h2>
           <dl class="facts">
             <div><dt>Delivery area</dt><dd>Perth Metro &amp; Mandurah</dd></div>
@@ -179,7 +232,7 @@
           <p class="delivery__note">Online orders only. The nursery at 191 Westfield Rd, Camillo isn't a walk-in shop.</p>
         </div>
 
-        <div class="faq">
+        <div class="faq glass" data-reveal="focus">
           <h3>Good to know</h3>
           <details>
             <summary>Do you sell gift cards?</summary>
@@ -187,7 +240,7 @@
           </details>
           <details>
             <summary>Will my plant come with care instructions?</summary>
-            <p>Yes, every plant comes with its own care instructions. Most tags here also show the light it likes.</p>
+            <p>Yes, every plant comes with its own care instructions. Most plants here also show the light they like.</p>
           </details>
           <details>
             <summary>My plant isn't looking healthy. What should I do?</summary>
@@ -201,9 +254,11 @@
       </section>
 
       <section class="story" id="story" aria-labelledby="story-title">
+        <svg class="terrain" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-terrain data-reveal="draw"></svg>
+        <img class="leaf leaf--story" src="/images/leaf-c.webp" alt="" aria-hidden="true" data-depth="0.1" width="1200" height="1200" loading="lazy" />
         <div class="story__inner">
-          <h2 id="story-title">From a hobby to a nursery</h2>
-          <p>
+          <h2 id="story-title" data-reveal="wipe">From a hobby to a nursery</h2>
+          <p data-reveal="rise">
             Pot Plant Heaven started as a therapeutic hobby for Stephen Rolls, a way to find solace and recover from illness.
             It grew into a way to help others: the best plants, prices and delivery costs he can offer across Perth, supplied
             from south of the river.
@@ -221,15 +276,15 @@
 
     <footer class="foot" id="contact">
       <div class="foot__grid">
-        <div>
+        <div data-reveal="rise">
           <p class="foot__brand">Pot Plant Heaven Perth</p>
           <p>191 Westfield Rd, Camillo WA<br />Online orders only</p>
         </div>
-        <div>
+        <div data-reveal="rise">
           <p class="foot__h">Talk to the nursery</p>
           <ul class="foot__links" data-contact-list></ul>
         </div>
-        <div>
+        <div data-reveal="rise">
           <p class="foot__h">Follow along</p>
           <ul class="foot__links">
             <li><a href="https://www.instagram.com/potplantheavenperth/" rel="noopener" target="_blank">Instagram</a></li>
@@ -280,9 +335,9 @@
           <p class="order__sum" data-order-sum></p>
           <p class="order__status" data-order-status role="status"></p>
           <div class="order__send" data-send>
-            <button class="btn btn--flash" type="submit" name="via" value="email" data-send-email hidden>Send order request</button>
-            <button class="btn btn--flash" type="submit" name="via" value="whatsapp" data-send-whatsapp>Send by WhatsApp</button>
-            <button class="btn btn--ink" type="submit" name="via" value="sms">Send by SMS</button>
+            <button class="btn btn--lime" type="submit" name="via" value="email" data-send-email hidden>Send order request</button>
+            <button class="btn btn--lime" type="submit" name="via" value="whatsapp" data-send-whatsapp>Send by WhatsApp</button>
+            <button class="btn btn--ghost" type="submit" name="via" value="sms">Send by SMS</button>
             <button class="link-btn" type="button" data-copy>Copy order</button>
           </div>
         </form>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      canvas { display: block; }
+    </style>
+    <script type="importmap">
+      { "imports": { "three": "https://unpkg.com/three@0.180.0/build/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <script type="module">
+      // Renders a leafy branch on a transparent ground. ?v=a|b|c picks the composition.
+      import * as THREE from "three";
+      const v = new URLSearchParams(location.search).get("v") || "a";
+      const S = 1600;
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(S, S);
+      renderer.setClearColor(0x000000, 0);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      document.body.append(renderer.domElement);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 20);
+      camera.position.set(0, 0, 6);
+      scene.add(new THREE.HemisphereLight(0xdff5d0, 0x0c2014, 0.9));
+      const key = new THREE.DirectionalLight(0xfff2d8, 2.0);
+      key.position.set(-2, 3, 4);
+      scene.add(key);
+      const rim = new THREE.DirectionalLight(0xc8ff8a, 1.2);
+      rim.position.set(2, 1, -3);
+      scene.add(rim);
+
+      let seed = { a: 11, b: 29, c: 47 }[v];
+      const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+      // Leaf colour texture: deep base, lighter tip, pale midrib and faint lateral veins.
+      function leafTexture() {
+        const c = document.createElement("canvas");
+        c.width = 128;
+        c.height = 512;
+        const g = c.getContext("2d");
+        const grad = g.createLinearGradient(0, 512, 0, 0);
+        grad.addColorStop(0, "#1f4d22");
+        grad.addColorStop(0.55, "#3f8a2f");
+        grad.addColorStop(1, "#6fb63e");
+        g.fillStyle = grad;
+        g.fillRect(0, 0, 128, 512);
+        g.strokeStyle = "rgba(220,245,190,0.55)";
+        g.lineWidth = 3;
+        g.beginPath();
+        g.moveTo(64, 512);
+        g.lineTo(64, 0);
+        g.stroke();
+        g.strokeStyle = "rgba(210,240,180,0.18)";
+        g.lineWidth = 1.5;
+        for (let y = 480; y > 30; y -= 34) {
+          g.beginPath();
+          g.moveTo(64, y);
+          g.quadraticCurveTo(96, y - 18, 128, y - 40);
+          g.moveTo(64, y);
+          g.quadraticCurveTo(32, y - 18, 0, y - 40);
+          g.stroke();
+        }
+        const t = new THREE.CanvasTexture(c);
+        t.colorSpace = THREE.SRGBColorSpace;
+        return t;
+      }
+      const tex = leafTexture();
+
+      function leafGeometry(length, width, curl, fold) {
+        const segs = 18;
+        const pos = [], uv = [], idx = [];
+        for (let i = 0; i <= segs; i++) {
+          const t = i / segs;
+          const half = (width / 2) * Math.pow(Math.sin(Math.PI * Math.min(1, t * 1.02)), 0.7) * (1 - 0.15 * t);
+          const y = t * length;
+          const z = curl * t * t * length;
+          pos.push(-half, y, z + fold * half, 0, y, z, half, y, z + fold * half);
+          uv.push(0, t, 0.5, t, 1, t);
+          if (i < segs) {
+            const a = i * 3, b = a + 3;
+            idx.push(a, b, a + 1, a + 1, b, b + 1, a + 1, b + 1, a + 2, a + 2, b + 1, b + 2);
+          }
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+        geo.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+        geo.setIndex(idx);
+        geo.computeVertexNormals();
+        return geo;
+      }
+
+      const leafMat = new THREE.MeshPhysicalMaterial({
+        map: tex,
+        roughness: 0.38,
+        clearcoat: 0.3,
+        clearcoatRoughness: 0.45,
+        sheen: 0.12,
+        sheenColor: new THREE.Color(0xc9f59a),
+        side: THREE.DoubleSide,
+      });
+      const stemMat = new THREE.MeshStandardMaterial({ color: 0x3d5b2a, roughness: 0.7 });
+
+      // One arching branch: start, control, end in view units; leaves alternate along it.
+      function branch(p0, p1, p2, count, size) {
+        const curve = new THREE.QuadraticBezierCurve3(p0, p1, p2);
+        scene.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 40, 0.008, 6, false), stemMat));
+        for (let i = 0; i < count; i++) {
+          const t = 0.12 + (i / count) * 0.86;
+          const at = curve.getPoint(t);
+          const tan = curve.getTangent(t);
+          const side = i % 2 ? 1 : -1;
+          const len = size * (0.75 + rand() * 0.45) * (1 - 0.35 * t);
+          const geo = leafGeometry(len, len * 0.34, 0.22 + rand() * 0.2, 0.18);
+          const mat = leafMat.clone();
+          mat.color.setHSL(0.27 + (rand() - 0.5) * 0.04, 0.5, 0.42 + rand() * 0.3);
+          const leaf = new THREE.Mesh(geo, mat);
+          leaf.position.z = (rand() - 0.5) * 0.4;
+          leaf.position.copy(at);
+          const ang = Math.atan2(tan.y, tan.x) - Math.PI / 2 + side * (0.75 + rand() * 0.35);
+          leaf.rotation.set((rand() - 0.5) * 0.9, (rand() - 0.5) * 0.9, ang);
+          scene.add(leaf);
+        }
+        // A terminal leaf at the tip.
+        const tipTan = curve.getTangent(1);
+        const tip = new THREE.Mesh(leafGeometry(size * 0.7, size * 0.21, 0.2, 0.15), leafMat);
+        tip.position.copy(p2);
+        tip.rotation.z = Math.atan2(tipTan.y, tipTan.x) - Math.PI / 2;
+        scene.add(tip);
+      }
+
+      const V = (x, y, z = 0) => new THREE.Vector3(x, y, z);
+      if (v === "a") {
+        // From the top-right corner, arching down and left.
+        branch(V(1.15, 1.1), V(0.3, 0.8), V(-0.45, -0.05), 12, 0.66);
+        branch(V(1.15, 0.65), V(0.7, 0.25), V(0.2, -0.55), 9, 0.56);
+      } else if (v === "b") {
+        // From the left edge, reaching right and slightly up.
+        branch(V(-1.15, -0.25), V(-0.35, -0.4), V(0.6, 0.3), 12, 0.62);
+      } else {
+        // From the bottom-left corner, rising.
+        branch(V(-1.15, -1.15), V(-0.75, -0.2), V(-0.05, 0.5), 12, 0.66);
+        branch(V(-0.85, -1.15), V(-0.15, -0.8), V(0.5, -0.5), 8, 0.54);
+      }
+      renderer.render(scene, camera);
+      document.title = "ready";
+    </script>
+  </body>
+</html>

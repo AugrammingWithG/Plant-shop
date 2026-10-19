@@ -1,6 +1,7 @@
 // The hero bench: a black nursery pot on a turntable, a procedurally grown plant,
 // and a stake tag whose front and back are painted from the real product data.
 import * as THREE from "three";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { imageUrl, money, firstAvailable, sizeChip, botanical, excerpt, barcodeBars } from "./format.js";
 
 const GREEN = "#0d6b38";
@@ -15,7 +16,9 @@ const CANVAS_H = Math.round((CANVAS_W * (TAG.H + TAG.S)) / TAG.W);
 const PX = CANVAS_W / TAG.W;
 const BODY_PX = TAG.H * PX;
 
-export function createBench(canvas, stage, { onReady } = {}) {
+// glasshouse: the specimen sits in a terracotta pot under a glass cloche on a lit plinth, with no tag.
+export function createBench(canvas, stage, { onReady, glasshouse = false } = {}) {
+  const withTag = !glasshouse;
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -26,10 +29,16 @@ export function createBench(canvas, stage, { onReady } = {}) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 60);
-  const target = new THREE.Vector3(0, 1.06, 0);
+  const target = new THREE.Vector3(0, glasshouse ? 1.2 : 1.06, 0);
 
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x2f7a4b, 1.15));
-  const key = new THREE.DirectionalLight(0xfff1dc, 2.4);
+  if (glasshouse) {
+    // Soft studio reflections so the glass and leaves catch light against the dark.
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environmentIntensity = 0.45;
+  }
+  scene.add(glasshouse ? new THREE.HemisphereLight(0xd6eedd, 0x0b1711, 0.7) : new THREE.HemisphereLight(0xffffff, 0x2f7a4b, 1.15));
+  const key = new THREE.DirectionalLight(0xfff1dc, glasshouse ? 2.8 : 2.4);
   key.position.set(2.6, 5.2, 3.4);
   key.castShadow = true;
   key.shadow.mapSize.set(1024, 1024);
@@ -37,28 +46,35 @@ export function createBench(canvas, stage, { onReady } = {}) {
   key.shadow.radius = 5;
   key.shadow.bias = -0.0006;
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xe8fff0, 1.3);
+  const rim = new THREE.DirectionalLight(glasshouse ? 0xc6ee86 : 0xe8fff0, glasshouse ? 2.2 : 1.3);
   rim.position.set(-3, 3, -3.5);
   scene.add(rim);
   const fill = new THREE.DirectionalLight(0xdfeaff, 0.45);
   fill.position.set(-3, 1.2, 2.5);
   scene.add(fill);
 
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.ShadowMaterial({ opacity: 0.2 }));
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), new THREE.ShadowMaterial({ opacity: glasshouse ? 0.5 : 0.2 }));
   ground.rotation.x = -Math.PI / 2;
   ground.receiveShadow = true;
   scene.add(ground);
 
   const turntable = new THREE.Group();
   scene.add(turntable);
-  turntable.add(makePot());
+  turntable.add(makePot(glasshouse ? 0x8a5a3b : 0x1b1c19, glasshouse ? 0.85 : 0.58));
 
   const plantSlot = new THREE.Group();
   plantSlot.position.y = SOIL_Y;
   turntable.add(plantSlot);
 
-  const tag = makeTag();
-  turntable.add(tag.group);
+  if (glasshouse) {
+    // The pot turns on top of a fixed plinth, under a fixed glass cloche.
+    turntable.position.y = PLINTH_H;
+    turntable.scale.setScalar(0.9);
+    scene.add(makePlinth(), makeCloche());
+  }
+
+  const tag = withTag ? makeTag() : null;
+  if (tag) turntable.add(tag.group);
 
   /* ----- sizing ----- */
   function resize() {
@@ -68,7 +84,7 @@ export function createBench(canvas, stage, { onReady } = {}) {
     camera.aspect = width / height;
     const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
     const fitH = 2.75 / 2 / Math.tan(halfFov);
-    const fitW = 1.75 / 2 / (Math.tan(halfFov) * camera.aspect);
+    const fitW = (glasshouse ? 2.2 : 1.75) / 2 / (Math.tan(halfFov) * camera.aspect);
     const d = Math.max(fitH, fitW);
     camera.position.set(0, target.y + d * 0.17, d);
     camera.lookAt(target);
@@ -134,6 +150,16 @@ export function createBench(canvas, stage, { onReady } = {}) {
     wake();
   }
 
+  // 0 at the top of the page, 1 once the hero has scrolled away: the pot turns to show the tag's back.
+  let scrollTurn = 0;
+  function setScroll(p) {
+    const next = reduce ? 0 : p * Math.PI * 0.9;
+    if (Math.abs(next - scrollTurn) > 0.0005) {
+      scrollTurn = next;
+      wake();
+    }
+  }
+
   function setVariant(id) {
     variantId = id;
     if (current) paintTag(current.product, id, false);
@@ -141,6 +167,7 @@ export function createBench(canvas, stage, { onReady } = {}) {
 
   let paintToken = 0;
   async function paintTag(product, vId, withBack) {
+    if (!tag) return;
     const token = ++paintToken;
     await fontsReady;
     const img = product.images[0] ? await loadImage(imageUrl(product.images[0], 640, 460, "jpg")) : null;
@@ -186,15 +213,23 @@ export function createBench(canvas, stage, { onReady } = {}) {
         moving = true;
       }
     }
-    turntable.rotation.y = rot;
+    turntable.rotation.y = rot + scrollTurn;
+    if (!reduce) {
+      wind.value = now / 1000;
+      moving = true;
+      // The tag hangs a little loose on its stake.
+      if (!swap && tag) tag.group.rotation.z = tag.restRZ + Math.sin(now / 1400) * 0.012;
+    }
 
     if (swap) {
       const t = (now - swap.start) / 1000;
       if (swap.phase === "out") {
         const k = Math.min(1, t / 0.36);
         const e = k * k * k;
-        tag.group.position.y = tag.restY + e * 1.1;
-        tag.group.rotation.z = tag.restRZ + e * 0.28 * swap.dir;
+        if (tag) {
+          tag.group.position.y = tag.restY + e * 1.1;
+          tag.group.rotation.z = tag.restRZ + e * 0.28 * swap.dir;
+        }
         plant.scale.setScalar(Math.max(0.001, 1 - e));
         if (k >= 1) {
           current = swap.next;
@@ -210,8 +245,10 @@ export function createBench(canvas, stage, { onReady } = {}) {
       } else {
         const kt = Math.min(1, t / 0.7);
         const kp = Math.min(1, Math.max(0, (t - 0.12) / 0.8));
-        tag.group.position.y = tag.restY + (1 - easeOutBack(kt)) * 1.1;
-        tag.group.rotation.z = tag.restRZ + (1 - easeOutCubic(kt)) * -0.22 * swap.dir;
+        if (tag) {
+          tag.group.position.y = tag.restY + (1 - easeOutBack(kt)) * 1.1;
+          tag.group.rotation.z = tag.restRZ + (1 - easeOutCubic(kt)) * -0.22 * swap.dir;
+        }
         plant.scale.setScalar(Math.max(0.001, easeOutCubic(kp)));
         if (kt >= 1 && kp >= 1) swap = null;
       }
@@ -229,18 +266,18 @@ export function createBench(canvas, stage, { onReady } = {}) {
   resize();
   wake();
 
-  return { show, setVariant };
+  return { show, setVariant, setScroll };
 }
 
 /* ================= pot ================= */
 
-function makePot() {
+function makePot(color = 0x1b1c19, roughness = 0.58) {
   const g = new THREE.Group();
   const profile = [
     [0.0, 0.0], [0.35, 0.0], [0.375, 0.03], [0.465, 0.84], [0.5, 0.855], [0.508, 0.93],
     [0.482, 0.94], [0.468, 0.9], [0.455, SOIL_Y - 0.04],
   ].map(([x, y]) => new THREE.Vector2(x, y));
-  const potMat = new THREE.MeshStandardMaterial({ color: 0x1b1c19, roughness: 0.58, metalness: 0.0 });
+  const potMat = new THREE.MeshStandardMaterial({ color, roughness, metalness: 0.0 });
   const pot = new THREE.Mesh(new THREE.LatheGeometry(profile, 72), potMat);
   pot.castShadow = true;
   pot.receiveShadow = true;
@@ -282,6 +319,62 @@ function makePot() {
   }
   chip.receiveShadow = true;
   g.add(chip);
+  return g;
+}
+
+/* ================= glasshouse: plinth + cloche ================= */
+
+const PLINTH_H = 0.2;
+
+function makePlinth() {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.98, 1.04, PLINTH_H, 72),
+    new THREE.MeshStandardMaterial({ color: 0x13261c, roughness: 0.42, metalness: 0.15 }),
+  );
+  body.position.y = PLINTH_H / 2;
+  body.receiveShadow = true;
+  body.castShadow = true;
+  // A fine lime light along the plinth edge.
+  const edge = new THREE.Mesh(new THREE.TorusGeometry(0.98, 0.006, 8, 120), new THREE.MeshBasicMaterial({ color: 0xb9e36b }));
+  edge.rotation.x = Math.PI / 2;
+  edge.position.y = PLINTH_H;
+  g.add(body, edge);
+  return g;
+}
+
+function makeCloche() {
+  const g = new THREE.Group();
+  const R = 0.78;
+  const wall = 1.42;
+  const profile = [new THREE.Vector2(R, 0)];
+  profile.push(new THREE.Vector2(R, wall));
+  for (let i = 1; i <= 16; i++) {
+    const a = (i / 16) * (Math.PI / 2);
+    profile.push(new THREE.Vector2(Math.cos(a) * R, wall + Math.sin(a) * R * 0.78));
+  }
+  const glass = new THREE.MeshPhysicalMaterial({
+    color: 0xe4fbe9,
+    metalness: 0,
+    roughness: 0.04,
+    transparent: true,
+    opacity: 0.13,
+    clearcoat: 1,
+    clearcoatRoughness: 0.04,
+    envMapIntensity: 2.4,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+  });
+  const dome = new THREE.Mesh(new THREE.LatheGeometry(profile, 96), glass);
+  dome.position.y = PLINTH_H;
+  dome.renderOrder = 2;
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(0.06, 24, 16), new THREE.MeshPhysicalMaterial({ color: 0xdff3e4, roughness: 0.1, transparent: true, opacity: 0.5, clearcoat: 1 }));
+  knob.position.y = PLINTH_H + wall + R * 0.78 + 0.04;
+  const rimMat = new THREE.MeshStandardMaterial({ color: 0x24402f, roughness: 0.4, metalness: 0.3 });
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(R, 0.012, 8, 120), rimMat);
+  rim.rotation.x = Math.PI / 2;
+  rim.position.y = PLINTH_H + 0.01;
+  g.add(dome, knob, rim);
   return g;
 }
 
@@ -581,8 +674,29 @@ function leafGeometry({ length = 1, width = 0.2, segs = 8, fold = 0.25, curl = 0
   return g;
 }
 
+// Shared clock for the breeze; every leaf material reads it.
+const wind = { value: 0 };
+
+// Leaves sway in a light breeze: higher leaves move more, and neighbours move together.
 function leafMaterial(roughness = 0.55) {
-  return new THREE.MeshStandardMaterial({ roughness, side: THREE.DoubleSide, vertexColors: false });
+  const m = new THREE.MeshStandardMaterial({ roughness, side: THREE.DoubleSide, vertexColors: false });
+  m.onBeforeCompile = (shader) => {
+    shader.uniforms.uWind = wind;
+    shader.vertexShader = `uniform float uWind;\n${shader.vertexShader}`.replace(
+      "#include <project_vertex>",
+      `vec4 mvPosition = vec4( transformed, 1.0 );
+      #ifdef USE_INSTANCING
+        mvPosition = instanceMatrix * mvPosition;
+      #endif
+      float lift = smoothstep( 0.0, 1.4, mvPosition.y );
+      float gust = sin( uWind * 1.6 + mvPosition.x * 3.1 + mvPosition.z * 2.3 ) * 0.6 + sin( uWind * 2.7 + mvPosition.y * 4.0 ) * 0.4;
+      mvPosition.x += gust * 0.016 * lift;
+      mvPosition.z += gust * 0.009 * lift;
+      mvPosition = modelViewMatrix * mvPosition;
+      gl_Position = projectionMatrix * mvPosition;`,
+    );
+  };
+  return m;
 }
 
 // Collects leaf placements, then commits them as one InstancedMesh per geometry.
