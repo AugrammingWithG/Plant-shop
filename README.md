@@ -11,7 +11,7 @@ npm run build     # static site in dist/
 npm run preview   # serve the build
 ```
 
-The site is fully static, so `dist/` can be deployed to Netlify, Vercel, GitHub Pages or any other static host.
+The site is fully static. Every push to `main` builds the site and deploys it to GitHub Pages through `.github/workflows/deploy.yml`, at https://augrammingwithg.github.io/Plant-shop/. Because Pages serves the site under `/Plant-shop/`, the workflow sets `BASE_PATH` for the build. If you move to a custom domain or a different host, leave `BASE_PATH` unset.
 
 ## The catalogue
 

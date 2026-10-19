@@ -39,7 +39,7 @@ injectIcons();
 renderContact();
 $("[data-year]").textContent = new Date().getFullYear();
 
-fetch("/data/products.json")
+fetch(`${import.meta.env.BASE_URL}data/products.json`)
   .then((r) => {
     if (!r.ok) throw new Error(r.status);
     return r.json();
