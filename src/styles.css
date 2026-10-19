@@ -797,6 +797,10 @@ main {
   grid-column: 9 / -1;
   grid-row: 3;
   align-self: end;
+  /* Sits off to the right so the pot stays in view, just overlapping the cloche's edge. */
+  justify-self: end;
+  width: min(360px, 100%);
+  margin-right: calc(var(--edge) * -0.6);
   position: relative;
   z-index: 4;
   display: grid;
@@ -2793,6 +2797,8 @@ select option {
   .specimen {
     grid-column: 1;
     grid-row: 6;
+    justify-self: stretch;
+    width: auto;
     margin: -40px 0 0;
   }
   .hero__ask {
