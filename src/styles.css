@@ -230,10 +230,73 @@ button {
 }
 .leaf {
   position: absolute;
+  z-index: -1;
   pointer-events: none;
   user-select: none;
-  translate: 0 var(--py, 0px);
+  /* Scroll depth (--py) plus cursor depth (--mx/--my), each layer at its own rate. */
+  translate: var(--mx, 0px) calc(var(--py, 0px) + var(--my, 0px));
   will-change: translate, rotate;
+}
+.numbers,
+.bed,
+.how,
+.delivery,
+.story {
+  position: relative;
+  isolation: isolate;
+}
+.leaf--numbers {
+  top: -80px;
+  left: max(-12vw, -180px);
+  width: min(38vw, 540px);
+  opacity: 0.9;
+  transform-origin: 0% 0%;
+}
+.leaf--how {
+  top: -60px;
+  right: max(-16vw, -240px);
+  width: min(42vw, 600px);
+  opacity: 0.75;
+  scale: -1 1;
+  transform-origin: 100% 0%;
+}
+/* Pools of light that drift behind the glass. */
+.pool {
+  position: absolute;
+  z-index: -1;
+  width: min(70vw, 980px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(106, 163, 54, 0.18), rgba(106, 163, 54, 0.05) 40%, transparent 66%);
+  pointer-events: none;
+  translate: var(--mx, 0px) calc(var(--py, 0px) + var(--my, 0px));
+}
+.pool--numbers {
+  top: -10%;
+  left: -22%;
+}
+.pool--delivery {
+  top: -30%;
+  right: -18%;
+}
+/* The lamp: a soft glow that follows the cursor; the frosted panels catch it. */
+.lamp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 760px;
+  height: 760px;
+  margin: -380px 0 0 -380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 227, 107, 0.13), rgba(185, 227, 107, 0.045) 34%, transparent 64%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s;
+  will-change: transform;
+}
+.has-pointer .lamp {
+  opacity: 1;
 }
 .leaf--hero-tr {
   top: max(-22vw, -320px);
@@ -702,9 +765,8 @@ main {
 }
 .hero__hint {
   position: absolute;
-  left: 38%;
-  top: 9%;
-  translate: -50% 0;
+  left: 14%;
+  bottom: 1%;
   font-size: 0.8rem;
   color: var(--ink-3);
   white-space: nowrap;
@@ -2481,7 +2543,70 @@ select option {
 }
 /* While scrolling away, the headline drifts up a little slower than the page. */
 .motion .hero__title {
-  translate: 0 calc(var(--hero-p, 0) * -60px);
+  translate: var(--mx, 0px) calc(var(--hero-p, 0) * -60px + var(--my, 0px));
+}
+.motion .specimen {
+  translate: var(--mx, 0px) var(--my, 0px);
+}
+/* Headings and figures drift at slightly different speeds from the content around them. */
+.motion [data-depth]:not(.leaf):not(.pool) {
+  translate: 0 var(--py, 0px);
+}
+
+/* Glass that leans toward the cursor, with a glare sliding across it. */
+.has-pointer .tag,
+.has-pointer [data-tilt] {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transition:
+    transform 0.7s var(--ease-out),
+    border-color 0.3s,
+    box-shadow 0.4s;
+}
+.has-pointer .tag.is-tilting,
+.has-pointer [data-tilt].is-tilting {
+  transition:
+    transform 0.18s ease-out,
+    border-color 0.3s,
+    box-shadow 0.4s;
+}
+.has-pointer .tag:hover {
+  --lift: -6px;
+}
+[data-tilt] {
+  position: relative;
+}
+.has-pointer .tag::after,
+.has-pointer [data-tilt]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 0%), rgba(255, 255, 255, 0.1), transparent 42%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.has-pointer .tag.is-tilting::after,
+.has-pointer [data-tilt].is-tilting::after {
+  opacity: 1;
+}
+
+/* Magnetic buttons */
+[data-magnetic] {
+  transition:
+    translate 0.5s var(--ease-out),
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.3s,
+    transform 0.15s var(--ease-out);
+}
+[data-magnetic].is-pulled {
+  transition:
+    translate 0.12s linear,
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.3s,
+    transform 0.15s var(--ease-out);
 }
 
 /* Reveals: hidden only until they arrive; arrival is an animation, so observers always see them. */

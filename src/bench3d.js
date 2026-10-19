@@ -76,6 +76,16 @@ export function createBench(canvas, stage, { onReady, glasshouse = false } = {})
   const tag = withTag ? makeTag() : null;
   if (tag) turntable.add(tag.group);
 
+  // The camera leans toward the cursor: a small orbit around the specimen.
+  const camBase = new THREE.Vector3();
+  const lean = { x: 0, y: 0 };
+  function setPointer(x, y) {
+    if (reduce) return;
+    lean.x = x;
+    lean.y = y;
+    wake();
+  }
+
   /* ----- sizing ----- */
   function resize() {
     const { width, height } = stage.getBoundingClientRect();
@@ -86,7 +96,8 @@ export function createBench(canvas, stage, { onReady, glasshouse = false } = {})
     const fitH = 2.75 / 2 / Math.tan(halfFov);
     const fitW = (glasshouse ? 2.2 : 1.75) / 2 / (Math.tan(halfFov) * camera.aspect);
     const d = Math.max(fitH, fitW);
-    camera.position.set(0, target.y + d * 0.17, d);
+    camBase.set(0, target.y + d * 0.17, d);
+    camera.position.copy(camBase);
     camera.lookAt(target);
     camera.updateProjectionMatrix();
     dirty = true;
@@ -214,6 +225,11 @@ export function createBench(canvas, stage, { onReady, glasshouse = false } = {})
       }
     }
     turntable.rotation.y = rot + scrollTurn;
+    if (lean.x || lean.y) {
+      const a = lean.x * 0.32;
+      camera.position.set(Math.sin(a) * camBase.z, camBase.y - lean.y * 0.35, Math.cos(a) * camBase.z);
+      camera.lookAt(target);
+    }
     if (!reduce) {
       wind.value = now / 1000;
       moving = true;
@@ -266,7 +282,7 @@ export function createBench(canvas, stage, { onReady, glasshouse = false } = {})
   resize();
   wake();
 
-  return { show, setVariant, setScroll };
+  return { show, setVariant, setScroll, setPointer };
 }
 
 /* ================= pot ================= */

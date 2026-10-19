@@ -159,6 +159,126 @@ if (enabled) {
 
 export const motionEnabled = enabled;
 
+/* ---------- pointer: the glasshouse leans toward the cursor ----------
+   One smoothed pointer (-1..1 on each axis) drives every layer: [data-px] elements shift by
+   their own depth, [data-tilt] panels lean in 3D with a glare, [data-magnetic] buttons pull
+   toward the cursor, and the lamp glow follows it. Phones that report tilt use that instead. */
+
+const pointerListeners = new Set();
+export const onPointer = (fn) => pointerListeners.add(fn);
+
+const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+const pointer = { tx: 0, ty: 0, x: 0, y: 0, cx: innerWidth / 2, cy: innerHeight / 2, gx: innerWidth / 2, gy: innerHeight / 2 };
+const pxEls = [...document.querySelectorAll("[data-px]")];
+const magnets = [...document.querySelectorAll("[data-magnetic]")];
+const glow = document.querySelector(".lamp");
+let pRaf = 0;
+
+function pointerFrame() {
+  pRaf = 0;
+  pointer.x += (pointer.tx - pointer.x) * 0.07;
+  pointer.y += (pointer.ty - pointer.y) * 0.07;
+  pointer.gx += (pointer.cx - pointer.gx) * 0.16;
+  pointer.gy += (pointer.cy - pointer.gy) * 0.16;
+  for (const el of pxEls) {
+    const d = +el.dataset.px;
+    el.style.setProperty("--mx", `${(pointer.x * d * 46).toFixed(2)}px`);
+    el.style.setProperty("--my", `${(pointer.y * d * 30).toFixed(2)}px`);
+  }
+  if (glow) glow.style.transform = `translate3d(${pointer.gx.toFixed(1)}px, ${pointer.gy.toFixed(1)}px, 0)`;
+  pointerListeners.forEach((fn) => fn(pointer.x, pointer.y));
+  const settled = Math.abs(pointer.tx - pointer.x) < 0.001 && Math.abs(pointer.ty - pointer.y) < 0.001 && Math.abs(pointer.cx - pointer.gx) < 0.5;
+  if (!settled) pRaf = requestAnimationFrame(pointerFrame);
+}
+const kick = () => {
+  if (!pRaf) pRaf = requestAnimationFrame(pointerFrame);
+};
+
+if (enabled && finePointer) {
+  root.classList.add("has-pointer");
+  addEventListener(
+    "pointermove",
+    (e) => {
+      pointer.tx = (e.clientX / innerWidth) * 2 - 1;
+      pointer.ty = (e.clientY / innerHeight) * 2 - 1;
+      pointer.cx = e.clientX;
+      pointer.cy = e.clientY;
+      magnetize(e);
+      kick();
+    },
+    { passive: true },
+  );
+  document.addEventListener("pointerleave", () => {
+    pointer.tx = 0;
+    pointer.ty = 0;
+    kick();
+  });
+} else if (enabled && typeof DeviceOrientationEvent !== "undefined" && typeof DeviceOrientationEvent.requestPermission !== "function") {
+  // Android and other browsers that report tilt without a permission prompt.
+  let base = null;
+  addEventListener(
+    "deviceorientation",
+    (e) => {
+      if (e.gamma == null || e.beta == null) return;
+      base ??= { g: e.gamma, b: e.beta };
+      pointer.tx = Math.max(-1, Math.min(1, (e.gamma - base.g) / 25));
+      pointer.ty = Math.max(-1, Math.min(1, (e.beta - base.b) / 25));
+      kick();
+    },
+    { passive: true },
+  );
+}
+
+// Buttons lean toward a cursor within reach, and settle back when it leaves.
+function magnetize(e) {
+  for (const el of magnets) {
+    const r = el.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width / 2);
+    const dy = e.clientY - (r.top + r.height / 2);
+    const reach = Math.max(r.width, r.height) * 0.9 + 40;
+    const dist = Math.hypot(dx, dy);
+    if (dist < reach) {
+      const pull = (1 - dist / reach) * 0.35;
+      el.style.translate = `${(dx * pull).toFixed(1)}px ${(dy * pull).toFixed(1)}px`;
+      el.classList.add("is-pulled");
+    } else if (el.classList.contains("is-pulled")) {
+      el.style.translate = "";
+      el.classList.remove("is-pulled");
+    }
+  }
+}
+
+/* ---------- tilt: glass panels and plant cards lean toward the cursor ---------- */
+
+if (enabled && finePointer) {
+  let active = null;
+  const reset = (el) => {
+    el.style.removeProperty("--rx");
+    el.style.removeProperty("--ry");
+    el.classList.remove("is-tilting");
+  };
+  document.addEventListener(
+    "pointermove",
+    (e) => {
+      const el = e.target.closest?.(".tag, [data-tilt]");
+      if (active && active !== el) reset(active);
+      active = el;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width;
+      const ny = (e.clientY - r.top) / r.height;
+      const amp = +(el.dataset.tilt || 7);
+      el.classList.add("is-tilting");
+      el.style.setProperty("--rx", `${((0.5 - ny) * amp).toFixed(2)}deg`);
+      el.style.setProperty("--ry", `${((nx - 0.5) * amp).toFixed(2)}deg`);
+      el.style.setProperty("--gx", `${(nx * 100).toFixed(1)}%`);
+      el.style.setProperty("--gy", `${(ny * 100).toFixed(1)}%`);
+    },
+    { passive: true },
+  );
+  document.addEventListener("pointerleave", () => active && reset(active));
+}
+
 /* ---------- terrain: layered contour lines, like the sand hills in a botanical report ---------- */
 
 export function drawTerrain(svg) {

@@ -7,7 +7,7 @@ import { money, imageUrl, minPrice, firstAvailable, sizeChip, botanical, escapeH
 import { GROUPS, HEDGE_SIZES, groupById, inGroup } from "./groups.js";
 import { createHelper } from "./helper.js";
 import { EMAILJS, emailOrdersEnabled } from "./config.js";
-import { reveal, onHeroProgress, drawTerrain } from "./motion.js";
+import { reveal, onHeroProgress, onPointer, drawTerrain } from "./motion.js";
 import { renderChart } from "./chart.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -909,5 +909,6 @@ function initFeature() {
     bench.show(product, form, 1, sizeSel.value);
     // Scrolling past the hero turns the pot, so the tag shows its back on the way out.
     onHeroProgress((p) => bench.setScroll(p));
+    onPointer((x, y) => bench.setPointer(x, y));
   });
 }
