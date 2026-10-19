@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T08:15:23.102Z",
+  "title": "Design System: Pot Plant Heaven Perth",
+  "extensions": {
+    "colorMeta": {
+      "field": {
+        "role": "primary",
+        "displayName": "Nursery Bed Green",
+        "canonical": "oklch(46.5% 0.115 152.7)",
+        "tonalRamp": [
+          "oklch(15% 0.115 152.7)",
+          "oklch(25% 0.115 152.7)",
+          "oklch(35% 0.115 152.7)",
+          "oklch(45% 0.115 152.7)",
+          "oklch(55% 0.115 152.7)",
+          "oklch(65% 0.115 152.7)",
+          "oklch(80% 0.115 152.7)",
+          "oklch(95% 0.040 152.7)"
+        ]
+      },
+      "field-deep": {
+        "role": "primary",
+        "displayName": "Deep Bed Green",
+        "canonical": "oklch(40.3% 0.096 154.5)",
+        "tonalRamp": [
+          "oklch(15% 0.096 154.5)",
+          "oklch(25% 0.096 154.5)",
+          "oklch(35% 0.096 154.5)",
+          "oklch(45% 0.096 154.5)",
+          "oklch(55% 0.096 154.5)",
+          "oklch(65% 0.096 154.5)",
+          "oklch(80% 0.096 154.5)",
+          "oklch(95% 0.040 154.5)"
+        ]
+      },
+      "flash": {
+        "role": "secondary",
+        "displayName": "Price Flash Yellow",
+        "canonical": "oklch(88.1% 0.181 94.0)",
+        "tonalRamp": [
+          "oklch(15% 0.181 94)",
+          "oklch(25% 0.181 94)",
+          "oklch(35% 0.181 94)",
+          "oklch(45% 0.181 94)",
+          "oklch(55% 0.181 94)",
+          "oklch(65% 0.181 94)",
+          "oklch(80% 0.181 94)",
+          "oklch(95% 0.040 94)"
+        ]
+      },
+      "flash-deep": {
+        "role": "secondary",
+        "displayName": "Pressed Flash",
+        "canonical": "oklch(83.9% 0.172 92.1)",
+        "tonalRamp": [
+          "oklch(15% 0.172 92.1)",
+          "oklch(25% 0.172 92.1)",
+          "oklch(35% 0.172 92.1)",
+          "oklch(45% 0.172 92.1)",
+          "oklch(55% 0.172 92.1)",
+          "oklch(65% 0.172 92.1)",
+          "oklch(80% 0.172 92.1)",
+          "oklch(95% 0.040 92.1)"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "oklch(54.9% 0.190 31.8)",
+        "tonalRamp": [
+          "oklch(15% 0.190 31.8)",
+          "oklch(25% 0.190 31.8)",
+          "oklch(35% 0.190 31.8)",
+          "oklch(45% 0.190 31.8)",
+          "oklch(55% 0.190 31.8)",
+          "oklch(65% 0.190 31.8)",
+          "oklch(80% 0.190 31.8)",
+          "oklch(95% 0.040 31.8)"
+        ]
+      },
+      "tag": {
+        "role": "neutral",
+        "displayName": "Tag White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0)",
+          "oklch(25% 0.000 0)",
+          "oklch(35% 0.000 0)",
+          "oklch(45% 0.000 0)",
+          "oklch(55% 0.000 0)",
+          "oklch(65% 0.000 0)",
+          "oklch(80% 0.000 0)",
+          "oklch(95% 0.000 0)"
+        ]
+      },
+      "tag-shade": {
+        "role": "neutral",
+        "displayName": "Tag Shade",
+        "canonical": "oklch(95.6% 0.009 134.9)",
+        "tonalRamp": [
+          "oklch(15% 0.009 134.9)",
+          "oklch(25% 0.009 134.9)",
+          "oklch(35% 0.009 134.9)",
+          "oklch(45% 0.009 134.9)",
+          "oklch(55% 0.009 134.9)",
+          "oklch(65% 0.009 134.9)",
+          "oklch(80% 0.009 134.9)",
+          "oklch(95% 0.009 134.9)"
+        ]
+      },
+      "tag-edge": {
+        "role": "neutral",
+        "displayName": "Tag Edge",
+        "canonical": "oklch(88.9% 0.015 136.1)",
+        "tonalRamp": [
+          "oklch(15% 0.015 136.1)",
+          "oklch(25% 0.015 136.1)",
+          "oklch(35% 0.015 136.1)",
+          "oklch(45% 0.015 136.1)",
+          "oklch(55% 0.015 136.1)",
+          "oklch(65% 0.015 136.1)",
+          "oklch(80% 0.015 136.1)",
+          "oklch(95% 0.015 136.1)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Print Black",
+        "canonical": "oklch(18.2% 0.009 137.9)",
+        "tonalRamp": [
+          "oklch(15% 0.009 137.9)",
+          "oklch(25% 0.009 137.9)",
+          "oklch(35% 0.009 137.9)",
+          "oklch(45% 0.009 137.9)",
+          "oklch(55% 0.009 137.9)",
+          "oklch(65% 0.009 137.9)",
+          "oklch(80% 0.009 137.9)",
+          "oklch(95% 0.009 137.9)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Faded Print",
+        "canonical": "oklch(40.6% 0.019 139.4)",
+        "tonalRamp": [
+          "oklch(15% 0.019 139.4)",
+          "oklch(25% 0.019 139.4)",
+          "oklch(35% 0.019 139.4)",
+          "oklch(45% 0.019 139.4)",
+          "oklch(55% 0.019 139.4)",
+          "oklch(65% 0.019 139.4)",
+          "oklch(80% 0.019 139.4)",
+          "oklch(95% 0.019 139.4)"
+        ]
+      },
+      "ink-lift": {
+        "role": "neutral",
+        "displayName": "Ink Lift",
+        "canonical": "oklch(29.8% 0.014 136.7)",
+        "tonalRamp": [
+          "oklch(15% 0.014 136.7)",
+          "oklch(25% 0.014 136.7)",
+          "oklch(35% 0.014 136.7)",
+          "oklch(45% 0.014 136.7)",
+          "oklch(55% 0.014 136.7)",
+          "oklch(65% 0.014 136.7)",
+          "oklch(80% 0.014 136.7)",
+          "oklch(95% 0.014 136.7)"
+        ]
+      },
+      "field-ink": {
+        "role": "neutral",
+        "displayName": "On-Field White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0)",
+          "oklch(25% 0.000 0)",
+          "oklch(35% 0.000 0)",
+          "oklch(45% 0.000 0)",
+          "oklch(55% 0.000 0)",
+          "oklch(65% 0.000 0)",
+          "oklch(80% 0.000 0)",
+          "oklch(95% 0.000 0)"
+        ]
+      },
+      "field-ink-2": {
+        "role": "neutral",
+        "displayName": "Pale Leaf",
+        "canonical": "oklch(92.0% 0.035 155.9)",
+        "tonalRamp": [
+          "oklch(15% 0.035 155.9)",
+          "oklch(25% 0.035 155.9)",
+          "oklch(35% 0.035 155.9)",
+          "oklch(45% 0.035 155.9)",
+          "oklch(55% 0.035 155.9)",
+          "oklch(65% 0.035 155.9)",
+          "oklch(80% 0.035 155.9)",
+          "oklch(95% 0.035 155.9)"
+        ]
+      },
+      "pot": {
+        "role": "neutral",
+        "displayName": "Poly-Pot Black",
+        "canonical": "oklch(19.7% 0.007 135.0)",
+        "tonalRamp": [
+          "oklch(15% 0.007 135)",
+          "oklch(25% 0.007 135)",
+          "oklch(35% 0.007 135)",
+          "oklch(45% 0.007 135)",
+          "oklch(55% 0.007 135)",
+          "oklch(65% 0.007 135)",
+          "oklch(80% 0.007 135)",
+          "oklch(95% 0.007 135)"
+        ]
+      },
+      "pot-ink-2": {
+        "role": "neutral",
+        "displayName": "Pot Grey Text",
+        "canonical": "oklch(80.4% 0.019 137.8)",
+        "tonalRamp": [
+          "oklch(15% 0.019 137.8)",
+          "oklch(25% 0.019 137.8)",
+          "oklch(35% 0.019 137.8)",
+          "oklch(45% 0.019 137.8)",
+          "oklch(55% 0.019 137.8)",
+          "oklch(65% 0.019 137.8)",
+          "oklch(80% 0.019 137.8)",
+          "oklch(95% 0.019 137.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero H1 only. Uppercase white with the second word in flash; width 68% below 901px, 76% above."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2s, uppercase, balanced wrap."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Plant common names on tags; sheet, step, FAQ and order titles. Uppercase."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Every price, subtotal and total; tabular figures."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Stephen's quote in the story section only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy, 34-65ch."
+      },
+      "botanical": {
+        "displayName": "Botanical",
+        "purpose": "Italic Latin names under common names; never caps."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Buttons, pills and nav."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked names for fields, facts and footer columns; never a kicker above a heading."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tag-rest",
+        "value": "drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.28))",
+        "purpose": "Every tag; applied as filter so the stake and hole silhouettes cast."
+      },
+      {
+        "name": "card-lift",
+        "value": "drop-shadow(0 18px 18px rgba(3,25,12,.3))",
+        "purpose": "Delivery card, the largest tag."
+      },
+      {
+        "name": "punched-hole",
+        "value": "inset 0 2px 2px rgba(0,0,0,.45)",
+        "purpose": "The punched hole in every tag."
+      },
+      {
+        "name": "flash-button",
+        "value": "0 1px 0 rgba(255,255,255,.5) inset, 0 6px 14px -8px rgba(0,0,0,.5)",
+        "purpose": "Primary flash buttons."
+      },
+      {
+        "name": "menu-drop",
+        "value": "0 18px 40px -16px rgba(0,0,0,.55)",
+        "purpose": "Contact dropdown."
+      },
+      {
+        "name": "header-stuck",
+        "value": "0 10px 24px -14px rgba(0,0,0,.55)",
+        "purpose": "Sticky header after scroll."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Sheets, menus, button press, meter fill, photo zoom."
+      },
+      {
+        "name": "ease-pull",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Tag lift-and-straighten, add-button press, order-button bump."
+      },
+      {
+        "name": "tag-lift",
+        "value": "0.45s ease-pull to translateY(-10px) rotate(0)",
+        "purpose": "A tag pulled from the bed on hover or focus."
+      },
+      {
+        "name": "sheet-in",
+        "value": "0.45s ease-out from translateY(24px) rotate(-1deg), opacity 0",
+        "purpose": "Plant sheet arrival."
+      },
+      {
+        "name": "slide-in",
+        "value": "0.45s ease-out from translateX(40px), opacity 0",
+        "purpose": "Order sheet arrival."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "durations 0.01ms; 3D bench replaced by a flat tag",
+        "purpose": "prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "600px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "hero-desktop",
+        "value": "901px"
+      },
+      {
+        "name": "lg",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Flash Button",
+      "kind": "button",
+      "refersTo": "button-flash",
+      "description": "Primary buy/send action: add to order, send by WhatsApp, the header order pill.",
+      "html": "<button class=\"ds-btn ds-btn-flash\" type=\"button\">Add to order</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-btn-flash{background:#ffd400;color:#10130f;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 6px 14px -8px rgba(0,0,0,.5)}.ds-btn-flash:hover{background:#f2c500}"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Secondary action; also the tag's Add button and the search's Find it.",
+      "html": "<button class=\"ds-btn ds-btn-ink\" type=\"button\">Send by SMS</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-btn-ink{background:#10130f;color:#fff}.ds-btn-ink:hover{background:#2a2f28}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outlined pill on the green field.",
+      "html": "<div class=\"ds-ground\"><button class=\"ds-btn ds-btn-ghost\" type=\"button\">Show more plants</button></div>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.25em;border:2px solid transparent;border-radius:999px;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-weight:750;font-stretch:85%;font-size:1rem;letter-spacing:.01em;cursor:pointer;transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s}.ds-btn:active{transform:translateY(1px) scale(.98)}.ds-btn:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-ground{background:#0a5730;padding:20px}.ds-btn-ghost{border-color:rgba(255,255,255,.7);background:transparent;color:#fff}.ds-btn-ghost:hover{background:rgba(255,255,255,.1)}"
+    },
+    {
+      "name": "Plant Tag",
+      "kind": "card",
+      "refersTo": "tag-card",
+      "description": "The signature: white stake tag with punched hole, condensed name, italic botanical, size chips and a flash price band.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-tag\" style=\"--tilt:-1deg\"><div class=\"ds-tag-photo\"></div><div class=\"ds-tag-face\"><p class=\"ds-tag-name\">Lilly Pilly Sublime</p><p class=\"ds-tag-bot\">Acmena smithii</p><div class=\"ds-tag-sizes\"><span class=\"ds-chip ds-chip-on\">5L</span><span class=\"ds-chip\">14cm</span></div></div><div class=\"ds-tag-flash\"><span class=\"ds-tag-price\">$27.99</span><button class=\"ds-tag-add\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5.5v13M5.5 12h13\"/></svg>Add</button></div></div></div>",
+      "css": ".ds-ground{background:#0a5730;padding:28px 28px 64px}.ds-tag{position:relative;width:228px;display:flex;flex-direction:column;padding:30px 12px 0;border-radius:20px 20px 6px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.28));transform:rotate(var(--tilt));transform-origin:50% 120%;transition:transform .45s cubic-bezier(.22,1,.36,1)}.ds-tag:hover,.ds-tag:focus-within{transform:translateY(-10px) rotate(0)}.ds-tag::before{content:\"\";position:absolute;top:10px;left:50%;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:#0a5730;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-tag::after{content:\"\";position:absolute;left:50%;top:calc(100% - 1px);width:34%;height:40px;translate:-50% 0;background:#fff;clip-path:polygon(0 0,100% 0,100% 45%,50% 100%,0 45%)}.ds-tag-photo{aspect-ratio:6/7;border-radius:12px;background:#eef2ec}.ds-tag-face{display:flex;flex-direction:column;gap:6px;padding:12px 2px 14px}.ds-tag-name{margin:0;font-size:1.5rem;font-weight:900;font-stretch:62%;line-height:.95;text-transform:uppercase}.ds-tag-bot{margin:0;font-style:italic;font-size:.92rem;line-height:1.3;color:#444c42}.ds-tag-sizes{display:flex;gap:5px;padding-top:8px}.ds-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1.5px solid #d6ddd3;border-radius:999px;font-size:.8rem;font-weight:650;font-stretch:88%}.ds-chip-on{background:#10130f;border-color:#10130f;color:#fff}.ds-tag-flash{display:flex;align-items:center;justify-content:space-between;margin:0 -12px;padding:10px 10px 10px 14px;background:#ffd400}.ds-tag-price{font-size:1.75rem;font-weight:900;font-stretch:62%;line-height:1;font-variant-numeric:tabular-nums}.ds-tag-add{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 14px 0 10px;border:0;border-radius:999px;background:#10130f;color:#fff;font:inherit;font-weight:750;font-stretch:85%;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),background-color .2s}.ds-tag-add:hover{background:#2a2f28}.ds-tag-add:active{transform:scale(.95)}.ds-tag-add:focus-visible{outline:3px solid #0d6b38;outline-offset:2px}"
+    },
+    {
+      "name": "Search Tag",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Catalogue search set as a blank horizontal tag: stake to the left, punched hole, a line to write on.",
+      "html": "<div class=\"ds-ground\"><form class=\"ds-find\" role=\"search\"><label class=\"ds-find-label\" for=\"ds-q\">What are you planting?</label><div class=\"ds-find-row\"><input id=\"ds-q\" type=\"search\" placeholder=\"lilly pilly, kangaroo paw, shade…\"><button type=\"submit\">Find it</button></div></form></div>",
+      "css": ".ds-ground{background:#0d6b38;padding:24px 24px 24px 54px}.ds-find{position:relative;max-width:520px;padding:16px 18px 18px 34px;border-radius:6px 22px 22px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 1px 1px rgba(3,25,12,.22)) drop-shadow(0 12px 12px rgba(3,25,12,.3))}.ds-find::before{content:\"\";position:absolute;right:calc(100% - 1px);top:50%;width:30px;height:46%;translate:0 -50%;background:#fff;clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%)}.ds-find::after{content:\"\";position:absolute;left:12px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#0d6b38;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-find-label{display:block;margin-bottom:4px;font-weight:900;font-stretch:62%;font-size:1.45rem;line-height:1;text-transform:uppercase}.ds-find-row{display:flex;align-items:center;gap:10px;border-bottom:2px solid #10130f;padding-bottom:6px}.ds-find input{flex:1;min-width:0;min-height:46px;border:0;background:transparent;font:inherit;font-size:1.1rem}.ds-find input::placeholder{color:#5d665a;font-style:italic}.ds-find input:focus{outline:none}.ds-find:focus-within{outline:3px solid #ffd400;outline-offset:4px}.ds-find button{min-height:46px;padding:0 20px;border:0;border-radius:999px;background:#10130f;color:#fff;font:inherit;font-weight:750;font-stretch:85%;cursor:pointer}.ds-find button:hover{background:#2a2f28}"
+    },
+    {
+      "name": "Light Filter Pill",
+      "kind": "chip",
+      "refersTo": "filter-pill-selected",
+      "description": "Toggle pill on green with a drawn light glyph; selected fills flash.",
+      "html": "<div class=\"ds-ground\"><label class=\"ds-lf\"><input type=\"checkbox\" checked><span><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.55 1.55M17.15 17.15l1.55 1.55M5.3 18.7l1.55-1.55M17.15 6.85l1.55-1.55\"/></svg>Full sun</span></label><label class=\"ds-lf\"><input type=\"checkbox\"><span>Shade</span></label></div>",
+      "css": ".ds-ground{background:#0a5730;padding:20px;display:flex;gap:6px}.ds-lf{position:relative}.ds-lf input{position:absolute;inset:0;opacity:0;cursor:pointer}.ds-lf span{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1.5px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;font-size:.88rem;font-weight:650;font-stretch:88%;transition:background-color .2s,color .2s,border-color .2s}.ds-lf:hover span{border-color:#fff}.ds-lf input:checked+span{background:#ffd400;border-color:#ffd400;color:#10130f}.ds-lf input:focus-visible+span{outline:3px solid #ffd400;outline-offset:2px}"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky green header: tag-silhouette wordmark, nav with flash underline on hover, flash order pill with tabular count and total.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><svg viewBox=\"0 0 40 64\" width=\"26\" height=\"42\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M6 0h28a6 6 0 0 1 6 6v36L20 64 0 42V6a6 6 0 0 1 6-6Z\"/><circle cx=\"20\" cy=\"9\" r=\"3.4\" fill=\"#0d6b38\"/></svg><span><b>Pot Plant Heaven</b><i>Perth</i></span></a><nav><a href=\"#\">Plants</a><a href=\"#\">Delivery</a></nav><button class=\"ds-order\" type=\"button\"><b>Your order</b> 3 · $60.97</button></header>",
+      "css": ".ds-top{display:flex;align-items:center;gap:28px;padding:12px 24px;background:#0d6b38;color:#fff;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif}.ds-mark{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}.ds-mark span{display:grid;line-height:.92;text-transform:uppercase}.ds-mark b{font-size:1.32rem;font-weight:900;font-stretch:62%}.ds-mark i{font-style:normal;font-size:.78rem;font-weight:700;letter-spacing:.32em;color:#ffd400}.ds-top nav{display:flex;gap:24px;margin-right:auto;font-weight:600;font-stretch:88%}.ds-top nav a{color:inherit;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}.ds-top nav a:hover{border-bottom-color:#ffd400}.ds-top a:focus-visible,.ds-order:focus-visible{outline:3px solid #ffd400;outline-offset:3px}.ds-order{min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#ffd400;color:#10130f;font:inherit;font-stretch:85%;font-weight:600;font-variant-numeric:tabular-nums;cursor:pointer;box-shadow:0 6px 14px -8px rgba(0,0,0,.55)}.ds-order b{font-weight:800}.ds-order:hover{background:#f2c500}"
+    },
+    {
+      "name": "Order Line",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A small horizontal tag in the order sheet, stake to the left, with a flash subtotal panel on the free end.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-line\"><div class=\"ds-line-img\"></div><div class=\"ds-line-what\"><b>Mondo Grass</b><span>14 cm Pot · $15.99</span></div><div class=\"ds-line-sub\">$15.99</div></div></div>",
+      "css": ".ds-ground{background:#0a5730;padding:20px 20px 20px 48px}.ds-line{position:relative;display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0 10px 30px;border-radius:6px 16px 16px 6px;background:#fff;color:#10130f;font-family:'Archivo Variable', 'Archivo', 'Arial Narrow', sans-serif;filter:drop-shadow(0 8px 8px rgba(0,0,0,.28))}.ds-line::before{content:\"\";position:absolute;right:calc(100% - 1px);top:50%;width:26px;height:52%;translate:0 -50%;background:#fff;clip-path:polygon(100% 0,45% 0,0 50%,45% 100%,100% 100%)}.ds-line::after{content:\"\";position:absolute;left:10px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#0a5730;box-shadow:inset 0 2px 2px rgba(0,0,0,.45)}.ds-line-img{width:52px;height:62px;border-radius:8px;background:#eef2ec}.ds-line-what{display:grid}.ds-line-what b{font-weight:800;font-stretch:80%;text-transform:uppercase;line-height:1.15}.ds-line-what span{font-size:.85rem;color:#444c42}.ds-line-sub{align-self:stretch;display:flex;align-items:center;margin:-10px 0;padding:0 14px;border-radius:0 16px 16px 0;background:#ffd400;font-size:1.35rem;font-weight:900;font-stretch:62%;font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nursery Tag",
+    "overview": "Every plant is its own white injection-moulded stake label pushed into a saturated nursery-green bed. The tag is the one object the system is built from: it is the catalogue card, the plant detail sheet (front and back), the hero's 3D label, each line of the order, and even the search box. Each carries a punched hole, rounded shoulders and either a pointed stake below (vertical tags) or a stake to the left (horizontal tags). The page reads as a working nursery bench, not a lifestyle boutique.\n\nDensity is high and honest. Hundreds of tags sit in a grid with real photos, pot sizes and prices, and nothing is hidden behind hover. Type is one variable family, Archivo, pulled hard to its narrowest width for names and numbers so long plant names and prices stay big. Process-yellow marks money and the primary action. Signal red appears only when something is out of stock or wrong. Black poly-pot plastic is the deepest ground.\n\nMotion follows the physical tag. Tags rest at a slight tilt and lift upright when you reach for them, sheets arrive with a small settle, and nothing loops or bounces. Under reduced motion, transitions collapse to nothing and the 3D bench gives way to a flat tag.",
+    "keyCharacteristics": [
+      "One object, many jobs: the stake tag is the card, the sheet, the order line and the search field.",
+      "Saturated nursery-green field (never white) as the page ground.",
+      "Black condensed caps for names, italic for botanicals, yellow flash for prices.",
+      "Soft, physical drop shadows under the tags; no flat-UI borders around cards.",
+      "Pill-shaped controls throughout; tag silhouettes reserved for content objects."
+    ],
+    "rules": [
+      {
+        "name": "The Flash Means Money Rule",
+        "body": "Yellow marks price and the act of buying (price bands, subtotals, primary add/send actions, selected size). It never decorates a heading block or a section background.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Is a Warning Rule",
+        "body": "Red appears only for out-of-stock, invalid input and error status. It is never an accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Green Ground Rule",
+        "body": "Content sits on the green field or on a white tag, never on a white page. White surfaces are always objects with a tag silhouette, a sheet or a field.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Tag Rule",
+        "body": "Plant names, prices and section heads are uppercase, weight 900, width 62%. Botanical names are italic, never caps. Prices always use tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label Earns Its Place Rule",
+        "body": "Tracked uppercase labels name a field, a fact or a column. They are never a decorative kicker stacked above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Plastic Shadow Rule",
+        "body": "Shadows are soft and tinted toward the green bed, as if the tag were lifted off it. Never use a hard offset shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** build every new content object as a tag: rounded shoulders, punched hole, stake, and the tag-rest shadow.",
+      "**Do** set names, prices and section heads in Archivo 900 at width 62%, uppercase, with tabular figures on every number.",
+      "**Do** put prices on the flash band and keep flash for money, buying and focus.",
+      "**Do** keep controls as pills (999px) at 44 to 48px tall, and circles for icon buttons.",
+      "**Do** use the drawn 24px / 1.75-stroke icon family for any new glyph.",
+      "**Do** let tags tilt at rest and straighten on hover or focus, using the pull curve (cubic-bezier(.22,1,.36,1)), and collapse motion under reduced-motion."
+    ],
+    "donts": [
+      "**Don't** put content on a white page. The ground is the green field, deep green or pot black.",
+      "**Don't** use red for anything except out-of-stock, invalid input or errors.",
+      "**Don't** give a content card plain uniform corners or a 1px border in place of the tag silhouette.",
+      "**Don't** use hard offset shadows. Tag shadows stay soft and green-tinted.",
+      "**Don't** put tracked uppercase kickers or eyebrows above headings. Tracked labels name fields and facts only.",
+      "**Don't** set botanical names in caps or plant common names in sentence case."
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-19T07:30:12.102Z",
+        "reason": "Claude (agent) decided: styles are imported via src/main.js so a static scan of index.html sees default 16px roles; rendered h1 is clamp(3.4rem,8.2vw,6rem), h2 up to 4.6rem vs 1.0625rem body, verified in .impeccable/review screenshots"
+      }
+    ]
+  }
+}

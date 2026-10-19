@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pot Plant Heaven Perth | Plants delivered across Perth &amp; Mandurah</title>
+    <meta
+      name="description"
+      content="Over 600 plants from a Camillo nursery, from hedging, natives and palms to indoor plants and succulents. Real pot sizes and prices. Order online for delivery across Perth Metro and Mandurah."
+    />
+    <meta name="theme-color" content="#0d6b38" />
+    <meta property="og:title" content="Pot Plant Heaven Perth" />
+    <meta property="og:description" content="Perth-proof plants, delivered. Browse real stock, real pot sizes and real prices." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://static.wixstatic.com" crossorigin />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#bed">Skip to the plants</a>
+
+    <div class="strip">
+      <p class="strip__facts">
+        <span>Online orders only</span>
+        <span>Delivering Perth Metro &amp; Mandurah</span>
+        <span>Mon–Sat, 1–9 pm</span>
+        <span>$350 minimum order</span>
+      </p>
+      <a class="strip__phone" href="tel:+61420493944">0420 493 944</a>
+    </div>
+
+    <header class="top">
+      <a class="mark" href="#top" aria-label="Pot Plant Heaven Perth, back to top">
+        <svg class="mark__tag" viewBox="0 0 40 64" aria-hidden="true">
+          <path d="M6 0h28a6 6 0 0 1 6 6v36L20 64 0 42V6a6 6 0 0 1 6-6Z" />
+          <circle cx="20" cy="9" r="3.4" />
+        </svg>
+        <span class="mark__words"><span>Pot Plant Heaven</span><span>Perth</span></span>
+      </a>
+      <nav class="top__nav" aria-label="Main">
+        <a href="#bed">Plants</a>
+        <a href="#how">How ordering works</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#story">Our story</a>
+      </nav>
+      <div class="top__actions">
+        <details class="contact">
+          <summary>Call or message</summary>
+          <div class="contact__menu" data-contact-menu></div>
+        </details>
+        <button class="order-btn" type="button" data-open-order>
+          <span class="order-btn__label">Your order</span>
+          <span class="order-btn__meta"><span data-order-count>0</span> · <span data-order-total>$0</span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <h1 class="hero__title" id="hero-title">
+          <span>Perth-proof</span>
+          <span>plants,</span>
+          <span>delivered.</span>
+        </h1>
+        <div class="hero__copy">
+          <p class="hero__lede">
+            <strong data-stock-count>640</strong> plants and garden lines from our Camillo nursery, from hedging and
+            natives to palms and indoor plants. Every one has its real pot size and price on the tag.
+          </p>
+          <form class="find" role="search" data-hero-search>
+            <label class="find__label" for="hero-q">What are you planting?</label>
+            <div class="find__row">
+              <input id="hero-q" name="q" type="search" placeholder="lilly pilly, kangaroo paw, shade…" autocomplete="off" />
+              <button type="submit">Find it</button>
+            </div>
+          </form>
+          <ul class="stakes" data-quick-cats aria-label="Popular categories"></ul>
+        </div>
+
+        <div class="hero__stage" data-stage>
+          <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+          <p class="hero__hint" data-hero-hint>Drag the pot to turn the tag</p>
+        </div>
+
+        <div class="feature" data-feature aria-live="polite">
+          <button class="feature__nav" type="button" data-feature-prev aria-label="Previous plant"></button>
+          <div class="feature__body">
+            <p class="feature__name"><a href="#" data-feature-link></a></p>
+            <div class="feature__buy">
+              <label class="visually-hidden" for="feature-size">Pot size</label>
+              <select id="feature-size" data-feature-size></select>
+              <button class="btn btn--flash" type="button" data-feature-add>Add to order</button>
+            </div>
+          </div>
+          <button class="feature__nav feature__nav--next" type="button" data-feature-next aria-label="Next plant"></button>
+        </div>
+      </section>
+
+      <section class="bed" id="bed" aria-labelledby="bed-title">
+        <div class="bed__head">
+          <h2 id="bed-title">The plant bed</h2>
+          <p>Every line we stock, each with its own tag. Filter by what your spot gets, then tick the pot size you want.</p>
+        </div>
+
+        <div class="bed__body">
+          <aside class="rail" aria-label="Categories">
+            <p class="rail__title">Categories</p>
+            <ul class="rail__list" data-rail></ul>
+          </aside>
+
+          <div class="bed__main">
+            <form class="tools" data-tools>
+              <div class="tools__search">
+                <label class="visually-hidden" for="bed-q">Search plants</label>
+                <input id="bed-q" name="q" type="search" placeholder="Search by name, botanical name or use" autocomplete="off" />
+              </div>
+              <fieldset class="light-filter">
+                <legend>Your spot gets</legend>
+                <label><input type="checkbox" name="light" value="sun" /><span data-icon="sun">Full sun</span></label>
+                <label><input type="checkbox" name="light" value="part" /><span data-icon="part">Part shade</span></label>
+                <label><input type="checkbox" name="light" value="shade" /><span data-icon="shade">Shade</span></label>
+              </fieldset>
+              <div class="tools__sort">
+                <label for="bed-sort">Sort</label>
+                <select id="bed-sort" name="sort">
+                  <option value="featured">Nursery order</option>
+                  <option value="price-asc">Price, low to high</option>
+                  <option value="price-desc">Price, high to low</option>
+                  <option value="name">Name, A–Z</option>
+                </select>
+              </div>
+              <label class="tools__stock"><input type="checkbox" name="instock" checked /> In stock only</label>
+            </form>
+
+            <p class="bed__count" data-count role="status"></p>
+            <ol class="tags" data-tags></ol>
+            <div class="bed__more">
+              <button class="btn btn--ghost" type="button" data-more>Show more plants</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" id="how" aria-labelledby="how-title">
+        <h2 id="how-title">How ordering works</h2>
+        <p class="how__lede">You won't pay at a checkout. You send us your order, we confirm what's ready and invoice you, then we deliver it.</p>
+        <ol class="how__steps">
+          <li>
+            <h3>Fill your order</h3>
+            <p>Tick a pot size on any tag and add it. Delivery starts at a $350 order, and your order sheet shows how close you are.</p>
+          </li>
+          <li>
+            <h3>Send the request</h3>
+            <p>Add your name, suburb and phone, then send it by WhatsApp or SMS straight to the nursery.</p>
+          </li>
+          <li>
+            <h3>We call to confirm</h3>
+            <p>We confirm stock and your delivery day, then send an invoice. Pay by credit card, PayPal or Alipay.</p>
+          </li>
+          <li>
+            <h3>Delivered to you</h3>
+            <p>Deliveries run Mon–Sat, 1–9 pm, across Perth Metro and Mandurah, usually within 7–10 business days.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="delivery" id="delivery" aria-labelledby="delivery-title">
+        <div class="delivery__card">
+          <h2 id="delivery-title">Delivery &amp; hours</h2>
+          <dl class="facts">
+            <div><dt>Delivery area</dt><dd>Perth Metro &amp; Mandurah</dd></div>
+            <div><dt>Minimum order</dt><dd>$350</dd></div>
+            <div><dt>Delivery days</dt><dd>Mon–Sat, 1 pm – 9 pm</dd></div>
+            <div><dt>Typical lead time</dt><dd>7–10 business days</dd></div>
+            <div><dt>Nursery office</dt><dd>Mon–Sat, 9 am – 12 noon</dd></div>
+            <div><dt>Payment</dt><dd>Credit card, PayPal or Alipay, on invoice</dd></div>
+          </dl>
+          <p class="delivery__note">Online orders only. The nursery at 191 Westfield Rd, Camillo isn't a walk-in shop.</p>
+        </div>
+
+        <div class="faq">
+          <h3>Good to know</h3>
+          <details>
+            <summary>Do you sell gift cards?</summary>
+            <p>Yes. Gift cards can be used for any purchase. Call or message the nursery to arrange one.</p>
+          </details>
+          <details>
+            <summary>Will my plant come with care instructions?</summary>
+            <p>Yes, every plant comes with its own care instructions. Most tags here also show the light it likes.</p>
+          </details>
+          <details>
+            <summary>My plant isn't looking healthy. What should I do?</summary>
+            <p>Check its sunlight, watering and soil first. If it's still struggling, call 0420 493 944 and we'll help you sort it out.</p>
+          </details>
+          <details>
+            <summary>Can I pick up from the nursery?</summary>
+            <p>We take orders online only and deliver them. Call the office (Mon–Sat, 9 am – 12 noon) if you have a special request.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="story" id="story" aria-labelledby="story-title">
+        <div class="story__tag">
+          <h2 id="story-title">From a hobby to a nursery</h2>
+          <p>
+            Pot Plant Heaven started as a therapeutic hobby for Stephen Rolls, a way to find solace and recover from illness.
+            It grew into a way to help others: the best plants, prices and delivery costs he can offer across Perth, supplied
+            from south of the river.
+          </p>
+          <blockquote>
+            <p>
+              “All plants are suitable for the Perth environment and will be guaranteed to provide you with the tools to create a
+              majestic garden that others will be jealous of, asking ‘Where did you get that from?’”
+            </p>
+            <footer>Stephen Rolls, Pot Plant Heaven Perth</footer>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot" id="contact">
+      <div class="foot__grid">
+        <div>
+          <p class="foot__brand">Pot Plant Heaven Perth</p>
+          <p>191 Westfield Rd, Camillo WA<br />Online orders only</p>
+        </div>
+        <div>
+          <p class="foot__h">Talk to the nursery</p>
+          <ul class="foot__links" data-contact-list></ul>
+        </div>
+        <div>
+          <p class="foot__h">Follow along</p>
+          <ul class="foot__links">
+            <li><a href="https://www.instagram.com/potplantheavenperth/" rel="noopener" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/POTPlantHeavenPerth/" rel="noopener" target="_blank">Facebook</a></li>
+            <li><a href="https://www.youtube.com/channel/UCPWqnC4Bj7WCc77mJRZyQ6A" rel="noopener" target="_blank">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot__small">© <span data-year></span> Pot Plant Heaven Perth · Prices in AUD, confirmed on invoice.</p>
+    </footer>
+
+    <dialog class="sheet sheet--plant" data-plant-sheet aria-labelledby="plant-title">
+      <div class="sheet__inner" data-plant-body></div>
+    </dialog>
+
+    <dialog class="sheet sheet--order" data-order-sheet aria-labelledby="order-title">
+      <div class="order">
+        <header class="order__head">
+          <h2 id="order-title">Your order</h2>
+          <button class="icon-btn" type="button" data-close aria-label="Close your order"></button>
+        </header>
+        <div class="order__progress" data-progress></div>
+        <ol class="order__lines" data-lines></ol>
+        <form class="order__form" data-order-form novalidate>
+          <p class="order__form-title">Deliver to</p>
+          <div class="field">
+            <label for="o-name">Your name</label>
+            <input id="o-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="o-phone">Phone</label>
+            <input id="o-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          </div>
+          <div class="field">
+            <label for="o-suburb">Suburb</label>
+            <input id="o-suburb" name="suburb" autocomplete="address-level2" required />
+          </div>
+          <div class="field">
+            <label for="o-notes">Notes for Stephen <span class="opt">(optional)</span></label>
+            <textarea id="o-notes" name="notes" rows="2" placeholder="Gate code, best time to call, substitutions OK?"></textarea>
+          </div>
+          <p class="order__sum" data-order-sum></p>
+          <p class="order__status" data-order-status role="status"></p>
+          <div class="order__send">
+            <button class="btn btn--flash" type="submit" name="via" value="whatsapp">Send by WhatsApp</button>
+            <button class="btn btn--ink" type="submit" name="via" value="sms">Send by SMS</button>
+            <button class="btn btn--ghost-ink" type="button" data-copy>Copy order</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </body>
+</html>
